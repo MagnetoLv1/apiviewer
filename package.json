@@ -1,11 +1,13 @@
 {
   "name": "apiviewer",
-  "version": "0.0.0",
+  "version": "0.0.1",
+  "main":"main.js",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "electron": "electron .",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -22,6 +24,7 @@
     "@angular/platform-browser-dynamic": "^4.0.0",
     "@angular/router": "^4.0.0",
     "core-js": "^2.4.1",
+    "dotenv": "^4.0.0",
     "rxjs": "^5.1.0",
     "zone.js": "^0.8.4"
   },
@@ -32,6 +35,7 @@
     "@types/jasmine": "2.5.45",
     "@types/node": "~6.0.60",
     "codelyzer": "~3.0.1",
+    "electron": "^1.6.11",
     "jasmine-core": "~2.6.2",
     "jasmine-spec-reporter": "~4.1.0",
     "karma": "~1.7.0",
