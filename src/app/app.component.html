@@ -1,14 +1,68 @@
 <div style="height:100%">
-  <vertical-split-pane primary-component-minsize="35" secondary-component-minsize="35" primary-component-initialratio="0.2"
-    (on-change)="onVChange($event)">
+  <header>
+    <div class="row bg-success">
+      <div class="col-xs-12 col-sm-6 col-md-8">.col-xs-12 .col-sm-6 .col-md-8</div>
+      <div class="col-xs-6 col-md-4">.col-xs-6 .col-md-4</div>
+    </div>
+  </header>
+  <vertical-split-pane primary-component-minsize="35" secondary-component-minsize="35" primary-component-initialratio="0.2">
     <div class="split-pane-content-primary">
       <div class="left">
-        Left
+        <ngb-tabset #t="ngbTabset">
+          <ngb-tab id="tab-selectbyid1" title="Simple">
+            <ng-template ngbTabContent>
+              <ul class="list-group">
+                <li class="list-group-item">Cras justo odio</li>
+                <li class="list-group-item">Dapibus ac facilisis in</li>
+                <li class="list-group-item">Morbi leo risus</li>
+                <li class="list-group-item">Porta ac consectetur ac</li>
+                <li class="list-group-item">Vestibulum at eros</li>
+              </ul>
+            </ng-template>
+          </ngb-tab>
+          <ngb-tab id="tab-selectbyid2">
+            <ng-template ngbTabTitle> title</ng-template>
+            <ng-template ngbTabContent>
+              <ul class="list-group">
+                <li class="list-group-item">Porta ac consectetur ac</li>
+                <li class="list-group-item">Vestibulum at eros</li>
+                <li class="list-group-item">Cras justo odio</li>
+                <li class="list-group-item">Dapibus ac facilisis in</li>
+                <li class="list-group-item">Morbi leo risus</li>
+              </ul>
+            </ng-template>
+          </ngb-tab>
+        </ngb-tabset>
+
       </div>
     </div>
     <div class="split-pane-content-secondary">
       <div class="right">
-        Right
+        <ngb-tabset #t="ngbTabset">
+          <ngb-tab id="tab-selectbyid1" title="Simple">
+            <ng-template ngbTabContent>
+              <ul class="list-group">
+                <li class="list-group-item">Cras justo odio</li>
+                <li class="list-group-item">Dapibus ac facilisis in</li>
+                <li class="list-group-item">Morbi leo risus</li>
+                <li class="list-group-item">Porta ac consectetur ac</li>
+                <li class="list-group-item">Vestibulum at eros</li>
+              </ul>
+            </ng-template>
+          </ngb-tab>
+          <ngb-tab id="tab-selectbyid2">
+            <ng-template ngbTabTitle> title</ng-template>
+            <ng-template ngbTabContent>
+              <ul class="list-group">
+                <li class="list-group-item">Porta ac consectetur ac</li>
+                <li class="list-group-item">Vestibulum at eros</li>
+                <li class="list-group-item">Cras justo odio</li>
+                <li class="list-group-item">Dapibus ac facilisis in</li>
+                <li class="list-group-item">Morbi leo risus</li>
+              </ul>
+            </ng-template>
+          </ngb-tab>
+        </ngb-tabset>
       </div>
     </div>
   </vertical-split-pane>

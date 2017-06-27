@@ -1,10 +1,10 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserModule } from '@angular/platform-browser';
+import { SplitPaneModule } from 'ng2-split-pane/lib/ng2-split-pane';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 // Pleas note the module is no in the root
-import { SplitPaneModule } from 'ng2-split-pane/lib/ng2-split-pane';
 
 @NgModule({
   declarations: [
@@ -12,8 +12,8 @@ import { SplitPaneModule } from 'ng2-split-pane/lib/ng2-split-pane';
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule,
-    SplitPaneModule
+    SplitPaneModule,
+    NgbModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
