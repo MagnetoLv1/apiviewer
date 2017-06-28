@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
 
 
 @Component({
@@ -8,4 +9,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  constructor() {
+
+
+  }
+
+  ngOnInit() {
+  }
 }

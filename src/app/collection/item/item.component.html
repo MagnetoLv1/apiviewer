@@ -1,0 +1,17 @@
+<li class="sidebar-collection-request sidebar-request clearfix" (click)="onItemClick()">
+        <div class="request-actions" [hidden]="!mouseover">
+            <a  class="request-actions-edit">
+                <img src="assets/img/edit.png" style="vertical-align: middle;">
+            </a>
+            <a  class="request-actions-delete">
+                <img src="assets/img/delete.png" style="vertical-align: middle;">
+            </a>
+        </div>
+        <div class="request request-actions-load">
+            <a><span class="label label-method-POST">POST</span>
+                <span class="request-name">
+                {{item.name}}
+                </span>
+            </a>
+        </div>
+    </li>

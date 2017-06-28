@@ -1,0 +1,5237 @@
+{
+	"variables": [],
+	"info": {
+		"name": "API",
+		"_postman_id": "941aee17-6637-dcb9-299d-175d9a9bf707",
+		"description": "모바일 API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "푸시",
+			"description": "",
+			"item": [
+				{
+					"name": "survey/a/poll",
+					"request": {
+						"url": "http://api.m.afreeca.com/survey/a/poll/no/000/no/000",
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "poll_idx",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "answer_no",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "notification/popup/a/getnotice",
+			"request": {
+				"url": "http://api.m.afreeca.com/notification/popup/a/getnotice",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "szDeviceType",
+							"value": "google",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "item/starballoon/a/getstorytelling",
+			"request": {
+				"url": "http://api.m.afreeca.com/item/starballoon/a/getstorytelling",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "szEnc",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "type",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "PC 스포츠 동영상 리스트",
+			"request": {
+				"url": "http://api.m.afreeca.com/sports/video/a/list2/title_no/000/nApiLevel/000/bbs_no/000/nApiLevel/000/bbs_no/000/memo_no/000/nApiLevel/000",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nTitleNo",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "nApiLevel",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "nStationNo",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "vodType",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "bbs_no",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "category_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "last_bbs_no",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "rows_per_page",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "nCurrentPage",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "nRowsPerPage",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "nLastTitleNo",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "nCurrentTitleNo",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szOrderBy",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szPos",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szDate",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "board/bug/a/searchlist",
+			"request": {
+				"url": "http://api.m.afreeca.com/board/bug/a/searchlist/szSearchType/000/word/000/nBno/000",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nPage",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "nRowsPerPage",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szSearchType",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szSearch",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "b_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "b_subject",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "b_content",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "b_file_path",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "b_file_name",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "b_file_size",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "b_notice_yn",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "nBno",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "return_url",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "type",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "기존 파일에서 불러왔던 내용 DB에서 불러오도록 변경 (group2을 사용하는곳 유지하기위하여)",
+			"request": {
+				"url": "http://api.m.afreeca.com/broad/category/a/group2",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "szGroupName",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "nGroupOrder",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szGroupOrderInfo",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "nGroupNo",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szGroupId",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szIsShow",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szIsAbstract",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szCategoryListInfo",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "nIsModifiedCategoryList",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szIconNormalUrl",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szIconActiveUrl",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szIconChinaUrl",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "방송국 로고 업로드",
+			"request": {
+				"url": "http://api.m.afreeca.com/station/admin/a/uploadlogo/station_no/000",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nStationNo",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szStationName",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szNickName",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szStationTitle",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szStationProfile",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szLogoFilename",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "application/a/startup",
+			"request": {
+				"url": "http://api.m.afreeca.com/application/a/startup",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "device_uuid",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "device_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "platform",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "방송국 기본정보 가져오기",
+			"request": {
+				"url": "http://api.m.afreeca.com/station/main/a/getstationdefaultinfo/bj/000",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "bj",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "station_no",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "bj_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "nStationNo",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szBjId",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "push/token/a/initialize",
+			"request": {
+				"url": "http://api.m.afreeca.com/push/token/a/initialize",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "sleep_start",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "sleep_end",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "type",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "device_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "token",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "noti",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "user_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "old_device_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "device_type",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "push/token/a/register",
+			"request": {
+				"url": "http://api.m.afreeca.com/push/token/a/register",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "sleep_start",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "sleep_end",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "type",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "device_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "token",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "noti",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "user_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "old_device_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "device_type",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "crowd/reply/a/delete2",
+			"request": {
+				"url": "http://api.m.afreeca.com/crowd/reply/a/delete2",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "last_idx",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "funding_idx",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "idx",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "contents",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "추천인원수",
+			"request": {
+				"url": "http://api.m.afreeca.com/broad/a/recommandcnt",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "bj_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "user_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "broad_no",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "type",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "item/a/checkpm",
+			"request": {
+				"url": "http://api.m.afreeca.com/item/a/checkpm",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "szEnc",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "type",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "스TALK커 핫이슈",
+			"request": {
+				"url": "http://api.m.afreeca.com/sports/stalker/a/hotissue",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "search_word",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "comment",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "조회수 올리기",
+			"request": {
+				"url": "http://api.m.afreeca.com/station/video/a/hit",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "szSearchWord",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szOrder",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "nPageNo",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "nListCnt",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "bHotClip",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szIndex",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "nSearch",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "nTerm",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szCategoryNo",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "query",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "order_by_column",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "current_page",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "rows_per_page",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "category_no",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "hotclip",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "lately",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "댓글 등록",
+			"request": {
+				"url": "http://api.m.afreeca.com/sports/stalker/a/replywrite",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "search_word",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "comment",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "push/info/a/goinapppage",
+			"request": {
+				"url": "http://api.m.afreeca.com/push/info/a/goinapppage",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "idx",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "즐겨찾기 삭제",
+			"request": {
+				"url": "http://api.m.afreeca.com/station/favorite/a/delete",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "push",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "order_by_column",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "영상클립 리스트",
+			"request": {
+				"url": "http://api.m.afreeca.com/station/video/a/search2",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "szSearchWord",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szOrder",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "nPageNo",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "nListCnt",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "bHotClip",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szIndex",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "nSearch",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "nTerm",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szCategoryNo",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "query",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "order_by_column",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "current_page",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "rows_per_page",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "category_no",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "hotclip",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "lately",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "sports/schedule/a/getlollivematch",
+			"request": {
+				"url": "http://api.m.afreeca.com/sports/schedule/a/getlollivematch/szDate/000",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "szPos",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szDate",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "recent",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "sports/schedule/a/getschedule",
+			"request": {
+				"url": "http://api.m.afreeca.com/sports/schedule/a/getschedule/szDate/000",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "szPos",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szDate",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "recent",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "핫이슈 VOD 및 방송 리스트 - 방송리스트 상단 영역",
+			"request": {
+				"url": "http://api.m.afreeca.com/broad/hotissue/a/list",
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "모바일 BJ 랭킹 API",
+			"request": {
+				"url": "http://api.m.afreeca.com/rank/a/getranklist",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "szSearch",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szTab",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "nPageNo",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "nRowsPerPage",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "item/sticker/a/getimage",
+			"request": {
+				"url": "http://api.m.afreeca.com/item/sticker/a/getimage",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "szEnc",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "type",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "방송국 방문자 수 증가",
+			"request": {
+				"url": "http://api.m.afreeca.com/station/main/a/updatevisitcount/bj/000",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "bj",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "station_no",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "bj_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "nStationNo",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szBjId",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "버그게시판 글 목록",
+			"request": {
+				"url": "http://api.m.afreeca.com/board/bug/a/getboardlist/szSearchType/000/word/000/nBno/000",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nPage",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "nRowsPerPage",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szSearchType",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szSearch",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "b_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "b_subject",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "b_content",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "b_file_path",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "b_file_name",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "b_file_size",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "b_notice_yn",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "nBno",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "return_url",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "type",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "캠코더 방송정보",
+			"request": {
+				"url": "http://api.m.afreeca.com/camcorder/a/broadinfo",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "user_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "ip",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "push/noti/a/gettime",
+			"request": {
+				"url": "http://api.m.afreeca.com/push/noti/a/gettime",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "sleep_start",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "sleep_end",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "device_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "token",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "noti",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "user_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "old_device_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "device_type",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "broad/a/list2",
+			"request": {
+				"url": "http://api.m.afreeca.com/broad/a/list2",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "bj_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "user_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "broad_no",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "type",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "영상클립 정보",
+			"request": {
+				"url": "http://api.m.afreeca.com/station/video/a/view",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "szSearchWord",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szOrder",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "nPageNo",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "nListCnt",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "bHotClip",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szIndex",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "nSearch",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "nTerm",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szCategoryNo",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "query",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "order_by_column",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "current_page",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "rows_per_page",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "category_no",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "hotclip",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "lately",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "broad/a/report",
+			"request": {
+				"url": "http://api.m.afreeca.com/broad/a/report",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "bj_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "user_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "broad_no",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "type",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "영상클립+스포츠) 리스트",
+			"request": {
+				"url": "http://api.m.afreeca.com/station/video/a/best",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "szSearchWord",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szOrder",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "nPageNo",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "nListCnt",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "bHotClip",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szIndex",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "nSearch",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "nTerm",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szCategoryNo",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "query",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "order_by_column",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "current_page",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "rows_per_page",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "category_no",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "hotclip",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "lately",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "방송하기 API",
+			"request": {
+				"url": "http://api.m.afreeca.com/broad/a/cast",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "bj_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "user_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "broad_no",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "type",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "sports/a/vod",
+			"request": {
+				"url": "http://api.m.afreeca.com/sports/a/vod/tab_id/000/season_code/000/group/000/season_code/000",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "board_last_idx",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "date",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "vs_idx",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "current_page",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "sports/a/daily",
+			"request": {
+				"url": "http://api.m.afreeca.com/sports/a/daily/tab_id/000/season_code/000/group/000/season_code/000",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "board_last_idx",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "date",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "vs_idx",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "current_page",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "sk플래닛 런처 API",
+			"request": {
+				"url": "http://api.m.afreeca.com/broad/hotissue/a/items",
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "펀딩 리스트 가져오기",
+			"request": {
+				"url": "http://api.m.afreeca.com/crowd/a/list/idx/000/idx/000/idx/000",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "last_idx",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "funding_idx",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "id",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "PC 스포츠 동영상 조회수 갱신",
+			"request": {
+				"url": "http://api.m.afreeca.com/sports/video/a/updateviewcount/title_no/000/nApiLevel/000/bbs_no/000/nApiLevel/000/bbs_no/000/memo_no/000/nApiLevel/000",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nTitleNo",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "nApiLevel",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "nStationNo",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "vodType",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "bbs_no",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "category_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "last_bbs_no",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "rows_per_page",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "nCurrentPage",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "nRowsPerPage",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "nLastTitleNo",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "nCurrentTitleNo",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szOrderBy",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szPos",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szDate",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "push/noti/a/logout",
+			"request": {
+				"url": "http://api.m.afreeca.com/push/noti/a/logout",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "sleep_start",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "sleep_end",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "device_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "token",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "noti",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "user_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "old_device_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "device_type",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "로그아웃",
+			"request": {
+				"url": "http://api.m.afreeca.com/member/a/logout",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "szUserID",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szPassword",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szWork",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szUrl",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "닉네임 사용가능 여부 체크",
+			"request": {
+				"url": "http://api.m.afreeca.com/station/admin/a/checknickname/station_no/000",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nStationNo",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szStationName",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szNickName",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szStationTitle",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szStationProfile",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szLogoFilename",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "검색결과 리스트 by (title 또는 title +  contents)",
+			"request": {
+				"url": "http://api.m.afreeca.com/notice/a/searchlist/platform/000/no/000/platform/000/search_word/000/search_type/000/platform/000",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "page_no",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "row_per_page_no",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "platform",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "search_word",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "search_type",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "sports/a/match",
+			"request": {
+				"url": "http://api.m.afreeca.com/sports/a/match/tab_id/000/season_code/000/group/000/season_code/000",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "board_last_idx",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "date",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "vs_idx",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "current_page",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "아이디어 추천하기",
+			"request": {
+				"url": "http://api.m.afreeca.com/event/fund/idea/a/recommend/idx/000",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "last_item_no",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "idx",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "idea_idx",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "comment",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "베스트 BJ인제 체크",
+			"request": {
+				"url": "http://api.m.afreeca.com/member/bj/a/checkisbestbj",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "szBjId",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "최대시청인원",
+			"request": {
+				"url": "http://api.m.afreeca.com/camcorder/a/maxinfo",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "user_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "ip",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "열혈 클랜원 랭킹",
+			"request": {
+				"url": "http://api.m.afreeca.com/station/ranking/a/clanranking",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "szBjId",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szPlatform",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "펀딩 참여자 리스트 가져오기",
+			"request": {
+				"url": "http://api.m.afreeca.com/crowd/a/partakerlist/idx/000/idx/000/idx/000",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "last_idx",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "funding_idx",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "id",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "방송국 이름 사용가능 여부 체크",
+			"request": {
+				"url": "http://api.m.afreeca.com/station/admin/a/checkstationname/station_no/000",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nStationNo",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szStationName",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szNickName",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szStationTitle",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szStationProfile",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szLogoFilename",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "펀딩 댓글 삭제하기",
+			"request": {
+				"url": "http://api.m.afreeca.com/crowd/reply/a/delete",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "last_idx",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "funding_idx",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "idx",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "contents",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "텍스트 아이디어 댓글 가져오기",
+			"request": {
+				"url": "http://api.m.afreeca.com/event/fund/idea/a/getideacommentlist/idx/000",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "last_item_no",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "idx",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "idea_idx",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "comment",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "item/sticker/a/gift",
+			"request": {
+				"url": "http://api.m.afreeca.com/item/sticker/a/gift",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "szEnc",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "type",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "핫이슈 방송 어드민 삽입",
+			"request": {
+				"url": "http://api.m.afreeca.com/broad/hotissue/a/insert",
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "방송국 정보 변경",
+			"request": {
+				"url": "http://api.m.afreeca.com/station/admin/a/save/station_no/000",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nStationNo",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szStationName",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szNickName",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szStationTitle",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szStationProfile",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szLogoFilename",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "방송정보 가져오기",
+			"request": {
+				"url": "http://api.m.afreeca.com/broad/a/getbroadinfo",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "bj_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "user_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "broad_no",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "type",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "새로운 bj 검색",
+			"request": {
+				"url": "http://api.m.afreeca.com/bj/a/search1",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "query",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "category_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "current_page_no",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "row_per_page",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "오퍼월에서 호출하는 아이템 리워드 콜백 api",
+			"request": {
+				"url": "http://api.m.afreeca.com/ad/offerwall/a/reward",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "usn",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "rewardkey",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "quantity",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "mediakey",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "campaignkey",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "search_type",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "keyword",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "start_date",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "end_date",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "방송시청하기 API",
+			"request": {
+				"url": "http://api.m.afreeca.com/broad/a/watchrelay",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "bj_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "user_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "broad_no",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "type",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "board/bug/memo/a/list",
+			"request": {
+				"url": "http://api.m.afreeca.com/board/bug/memo/a/list",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nBno",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "nPage",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "nRowsPerPage",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "nRno",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szContent",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "최대시청인원",
+			"request": {
+				"url": "http://api.m.afreeca.com/broad/a/maxuser",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "bj_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "user_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "broad_no",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "type",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "broad/rtmp/a/killbroad",
+			"request": {
+				"url": "http://api.m.afreeca.com/broad/rtmp/a/killbroad",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "game_idx",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "즐겨찾기 여부 체크",
+			"request": {
+				"url": "http://api.m.afreeca.com/station/favorite/a/check",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "push",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "order_by_column",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "로그인 후 성인인증을 받았는지 여부",
+			"request": {
+				"url": "http://api.m.afreeca.com/member/auth/a/checkissessionadult",
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "item/starballoon/a/getimage",
+			"request": {
+				"url": "http://api.m.afreeca.com/item/starballoon/a/getimage",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "szEnc",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "type",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "test/a/test",
+			"request": {
+				"url": "http://api.m.afreeca.com/test/a/test",
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "item/chocolate/a/gift",
+			"request": {
+				"url": "http://api.m.afreeca.com/item/chocolate/a/gift",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "szEnc",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "type",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "스TALK커 콘텐츠 내용",
+			"request": {
+				"url": "http://api.m.afreeca.com/sports/stalker/a/view",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "search_word",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "comment",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "메달 정보 가져오기",
+			"request": {
+				"url": "http://api.m.afreeca.com/station/main/a/getmedallist/bj/000",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "bj",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "station_no",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "bj_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "nStationNo",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szBjId",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "board/bug/memo/a/insert",
+			"request": {
+				"url": "http://api.m.afreeca.com/board/bug/memo/a/insert",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nBno",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "nPage",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "nRowsPerPage",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "nRno",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szContent",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "리스트",
+			"request": {
+				"url": "http://api.m.afreeca.com/home/a/list/platform/000",
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "push/noti/a/updatetime",
+			"request": {
+				"url": "http://api.m.afreeca.com/push/noti/a/updatetime",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "sleep_start",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "sleep_end",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "device_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "token",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "noti",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "user_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "old_device_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "device_type",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "아이디가 진행중인 방송 모두 가져오기",
+			"request": {
+				"url": "http://api.m.afreeca.com/broad/a/getbroadlist",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "bj_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "user_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "broad_no",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "type",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "영상클립+스포츠) 리스트",
+			"request": {
+				"url": "http://api.m.afreeca.com/station/video/a/search",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "szSearchWord",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szOrder",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "nPageNo",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "nListCnt",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "bHotClip",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szIndex",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "nSearch",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "nTerm",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szCategoryNo",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "query",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "order_by_column",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "current_page",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "rows_per_page",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "category_no",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "hotclip",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "lately",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "broad/rtmp/a/get",
+			"request": {
+				"url": "http://api.m.afreeca.com/broad/rtmp/a/get",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "game_idx",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "hotissue/a/list",
+			"request": {
+				"url": "http://api.m.afreeca.com/hotissue/a/list",
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "즐겨찾기 푸시설정",
+			"request": {
+				"url": "http://api.m.afreeca.com/station/favorite/a/update",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "push",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "order_by_column",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "sports/a/rank",
+			"request": {
+				"url": "http://api.m.afreeca.com/sports/a/rank/tab_id/000/season_code/000/group/000/season_code/000",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "board_last_idx",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "date",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "vs_idx",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "current_page",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "텍스트 아이디어 리스트 가져오기",
+			"request": {
+				"url": "http://api.m.afreeca.com/event/fund/idea/a/gettextlist/idx/000",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "last_item_no",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "idx",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "idea_idx",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "comment",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "베스트 BJ 리스트 가져오기",
+			"request": {
+				"url": "http://api.m.afreeca.com/member/bj/a/getbestbjlist",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "szBjId",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "새로운 BJ랭킹",
+			"request": {
+				"url": "http://api.m.afreeca.com/bj/a/rank",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "query",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "category_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "current_page_no",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "row_per_page",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "sports/progamebj/a/list",
+			"request": {
+				"url": "http://api.m.afreeca.com/sports/progamebj/a/list",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "idx",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "cate",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "order",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "order_type",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "Rows_per_page",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "current_page",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "유저별 이벤트 참여내역 가져오기",
+			"request": {
+				"url": "http://api.m.afreeca.com/sports/lol/event/a/getpartilist",
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "즐겨찾기 리스트",
+			"request": {
+				"url": "http://api.m.afreeca.com/station/favorite/a/list",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "push",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "order_by_column",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "즐겨찾기 추가",
+			"request": {
+				"url": "http://api.m.afreeca.com/station/favorite/a/add",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "push",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "order_by_column",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "방송중 확인 API",
+			"request": {
+				"url": "http://api.m.afreeca.com/broad/a/isbroad",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "bj_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "user_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "broad_no",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "type",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "동영상 아이디어 리스트 가져오기",
+			"request": {
+				"url": "http://api.m.afreeca.com/event/fund/idea/a/getvideolist/idx/000",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "last_item_no",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "idx",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "idea_idx",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "comment",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "애니메이션, 기수별 파일 생성하기",
+			"request": {
+				"url": "http://api.m.afreeca.com/animation/a/list",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "station_no",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "bbs_no",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "broad/rtmp/a/chat",
+			"request": {
+				"url": "http://api.m.afreeca.com/broad/rtmp/a/chat",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "game_idx",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "버그게시판 상세글",
+			"request": {
+				"url": "http://api.m.afreeca.com/board/bug/a/getboard/szSearchType/000/word/000/nBno/000",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nPage",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "nRowsPerPage",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szSearchType",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szSearch",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "b_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "b_subject",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "b_content",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "b_file_path",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "b_file_name",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "b_file_size",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "b_notice_yn",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "nBno",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "return_url",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "type",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "아이디어 삭제하기",
+			"request": {
+				"url": "http://api.m.afreeca.com/event/fund/idea/a/delete/idx/000",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "last_item_no",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "idx",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "idea_idx",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "comment",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "스포츠 - home페이지 (핫이슈, 야신/여신(캐스터BJ), 오늘의 일정)",
+			"request": {
+				"url": "http://api.m.afreeca.com/sports/a/home",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "code",
+							"value": "KBO",
+							"type": "text"
+						},
+						{
+							"key": "date",
+							"value": "2015-07-14",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "스TALK커 콘텐츠 리스트",
+			"request": {
+				"url": "http://api.m.afreeca.com/sports/stalker/a/list",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "search_word",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "comment",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "broad/rtmp/a/check",
+			"request": {
+				"url": "http://api.m.afreeca.com/broad/rtmp/a/check",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "game_idx",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "security/crypto/a/checkupdate",
+			"request": {
+				"url": "http://api.m.afreeca.com/security/crypto/a/checkupdate",
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "텍스트 아이디어 댓글 삭제하기",
+			"request": {
+				"url": "http://api.m.afreeca.com/event/fund/idea/a/delcomment/idx/000",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "last_item_no",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "idx",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "idea_idx",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "comment",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "열혈팬 랭킹",
+			"request": {
+				"url": "http://api.m.afreeca.com/station/ranking/a/starballoonranking",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "szBjId",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szPlatform",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "서포터 랭킹",
+			"request": {
+				"url": "http://api.m.afreeca.com/station/ranking/a/supporterranking",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "szBjId",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szPlatform",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "댓글 리스트",
+			"request": {
+				"url": "http://api.m.afreeca.com/sports/stalker/a/replylist",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "search_word",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "comment",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "방송채팅정보",
+			"request": {
+				"url": "http://api.m.afreeca.com/broad/a/webchat",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "bj_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "user_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "broad_no",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "type",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "sports/progamebj/a/bjinfo",
+			"request": {
+				"url": "http://api.m.afreeca.com/sports/progamebj/a/bjinfo",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "idx",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "cate",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "order",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "order_type",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "Rows_per_page",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "current_page",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "영상클립 삭제",
+			"request": {
+				"url": "http://api.m.afreeca.com/station/video/a/delete",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "szSearchWord",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szOrder",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "nPageNo",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "nListCnt",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "bHotClip",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szIndex",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "nSearch",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "nTerm",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szCategoryNo",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "query",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "order_by_column",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "current_page",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "rows_per_page",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "category_no",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "hotclip",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "lately",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "펀딩 댓글 가져오기",
+			"request": {
+				"url": "http://api.m.afreeca.com/crowd/reply/a/list",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "last_idx",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "funding_idx",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "idx",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "contents",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "플랫폼 버전",
+			"request": {
+				"url": "http://api.m.afreeca.com/notice/a/version/platform/000/no/000/platform/000/search_word/000/search_type/000/platform/000",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "page_no",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "row_per_page_no",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "platform",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "search_word",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "search_type",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "방송 중인지 체크",
+			"request": {
+				"url": "http://api.m.afreeca.com/broad/a/checkisbroading",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "bj_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "user_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "broad_no",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "type",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "영상클립 리스트",
+			"request": {
+				"url": "http://api.m.afreeca.com/station/video/a/list",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "szSearchWord",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szOrder",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "nPageNo",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "nListCnt",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "bHotClip",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szIndex",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "nSearch",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "nTerm",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szCategoryNo",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "query",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "order_by_column",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "current_page",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "rows_per_page",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "category_no",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "hotclip",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "lately",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "방송진입시 채팅서버를 불러오기위한 액션,chatFactory.js  에서 호출",
+			"request": {
+				"url": "http://api.m.afreeca.com/broad/chat/bridge/a/getlist",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "idx",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "ip",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "port",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "is_used",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "영상클립 정보",
+			"request": {
+				"url": "http://api.m.afreeca.com/station/a/userid/bj/000",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "bj",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "station_no",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "bj_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "nStationNo",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szBjId",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "초콜릿 선물 순위",
+			"request": {
+				"url": "http://api.m.afreeca.com/station/ranking/a/chocolateranking",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "szBjId",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szPlatform",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "시청자수, 추천수",
+			"request": {
+				"url": "http://api.m.afreeca.com/broad/a/viewerinfo",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "bj_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "user_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "broad_no",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "type",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "item/starballoon/a/gift",
+			"request": {
+				"url": "http://api.m.afreeca.com/item/starballoon/a/gift",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "szEnc",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "type",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "테마별 방송리스트",
+			"request": {
+				"url": "http://api.m.afreeca.com/broad/a/items",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "bj_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "user_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "broad_no",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "type",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "댓글 삭제",
+			"request": {
+				"url": "http://api.m.afreeca.com/sports/stalker/a/replyremove",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "search_word",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "comment",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "텍스트 아이디어 댓글 입력하기",
+			"request": {
+				"url": "http://api.m.afreeca.com/event/fund/idea/a/addcomment/idx/000",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "last_item_no",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "idx",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "idea_idx",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "comment",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "영상클립 리스트",
+			"request": {
+				"url": "http://api.m.afreeca.com/bj/a/search",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "query",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "category_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "current_page_no",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "row_per_page",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "sk플래닛 런처 API",
+			"request": {
+				"url": "http://api.m.afreeca.com/broad/hotissue/a/skplanet",
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "board/bug/memo/a/delete",
+			"request": {
+				"url": "http://api.m.afreeca.com/board/bug/memo/a/delete",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nBno",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "nPage",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "nRowsPerPage",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "nRno",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szContent",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "sports/lol/video/a/list",
+			"request": {
+				"url": "http://api.m.afreeca.com/sports/lol/video/a/list",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "current_page",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "rows_per_page",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "last_vod_no",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "order_by",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szPos",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "category",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "broad/a/list",
+			"request": {
+				"url": "http://api.m.afreeca.com/broad/a/list",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "bj_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "user_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "broad_no",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "type",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "펀딩 댓글 입력하기",
+			"request": {
+				"url": "http://api.m.afreeca.com/crowd/reply/a/insert",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "last_idx",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "funding_idx",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "idx",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "contents",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "sports/a/schedule",
+			"request": {
+				"url": "http://api.m.afreeca.com/sports/a/schedule/tab_id/000/season_code/000/group/000/season_code/000",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "board_last_idx",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "date",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "vs_idx",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "current_page",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "공지사항 리스트",
+			"request": {
+				"url": "http://api.m.afreeca.com/notice/a/getlist/platform/000/no/000/platform/000/search_word/000/search_type/000/platform/000",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "page_no",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "row_per_page_no",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "platform",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "search_word",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "search_type",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "아이디가 현재 펀딩 중인지 체크하기",
+			"request": {
+				"url": "http://api.m.afreeca.com/crowd/a/checkisfunding/idx/000/idx/000/idx/000",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "last_idx",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "funding_idx",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "id",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "방송시청하기 API",
+			"request": {
+				"url": "http://api.m.afreeca.com/broad/a/watch",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "bj_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "user_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "broad_no",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "type",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "broad/rtmp/a/change",
+			"request": {
+				"url": "http://api.m.afreeca.com/broad/rtmp/a/change",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "game_idx",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "버그게시판 글 삭제",
+			"request": {
+				"url": "http://api.m.afreeca.com/board/bug/a/deleteboard/szSearchType/000/word/000/nBno/000",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "nPage",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "nRowsPerPage",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szSearchType",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szSearch",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "b_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "b_subject",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "b_content",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "b_file_path",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "b_file_name",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "b_file_size",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "b_notice_yn",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "nBno",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "return_url",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "type",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "broad/category/a/group",
+			"request": {
+				"url": "http://api.m.afreeca.com/broad/category/a/group",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "szGroupName",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "nGroupOrder",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szGroupOrderInfo",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "nGroupNo",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szGroupId",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szIsShow",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szIsAbstract",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szCategoryListInfo",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "nIsModifiedCategoryList",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szIconNormalUrl",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szIconActiveUrl",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szIconChinaUrl",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "캠코더 로그인",
+			"request": {
+				"url": "http://api.m.afreeca.com/camcorder/a/login",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "user_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "ip",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "게임 리스트",
+			"request": {
+				"url": "http://api.m.afreeca.com/station/ranking/a/gamelist",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "szBjId",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szPlatform",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "더보기 형식, scheme 형식으로 사용될 rank",
+			"request": {
+				"url": "http://api.m.afreeca.com/rank/a/getlist",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "szSearch",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szTab",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "nPageNo",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "nRowsPerPage",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "방송정보 가져오기",
+			"request": {
+				"url": "http://api.m.afreeca.com/broad/a/getbroadinfobyno",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "bj_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "user_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "broad_no",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "type",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "방송국 메인정보 가져오기",
+			"request": {
+				"url": "http://api.m.afreeca.com/station/main/a/getmaindata/bj/000",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "bj",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "station_no",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "bj_id",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "nStationNo",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szBjId",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "sports/a/team",
+			"request": {
+				"url": "http://api.m.afreeca.com/sports/a/team/tab_id/000/season_code/000/group/000/season_code/000",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "board_last_idx",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "date",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "vs_idx",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "current_page",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "member/a/repackage",
+			"request": {
+				"url": "http://api.m.afreeca.com/member/a/repackage",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "szUserID",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szPassword",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szWork",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szUrl",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "추천콘텐츠",
+			"request": {
+				"url": "http://api.m.afreeca.com/sports/stalker/a/recommend",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "search_word",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "comment",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "로그인",
+			"request": {
+				"url": "http://api.m.afreeca.com/member/a/login",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "szUserID",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szPassword",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szWork",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "szUrl",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "broad/rtmp/a/set",
+			"request": {
+				"url": "http://api.m.afreeca.com/broad/rtmp/a/set",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "game_idx",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
