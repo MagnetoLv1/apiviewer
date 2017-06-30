@@ -3,6 +3,7 @@
     <div id="header" class="clearfix">
       <div id="logo">
         <a target="_blank">
+          
                 <img src="assets/img/logo-grey.png" alt="Postman" height="15px"
                      width="100px"/>
             </a>
@@ -40,7 +41,9 @@
       </ul>
       <div id="sidebar-section-data">
         <div class="tab-pane active" id="sidebar-section-history">
-          <app-collection></app-collection>
+          <app-collection  (outEventEmitter)="onSelectItem($event)">
+
+          </app-collection>
         </div>
         <div class="tab-pane active" id="sidebar-section-collections">
           <ul id="history-items" class="clearfix">dddd
@@ -51,7 +54,7 @@
     <div id="sidebar-filler"></div>
   </div>
   <div id="main" class="content">
-    <app-request></app-request>
+    <app-request [requestData]="requestData"></app-request>
     <app-response></app-response>
 
   </div>

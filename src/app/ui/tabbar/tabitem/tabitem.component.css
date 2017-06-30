@@ -1,36 +1,4 @@
-.tab-bar {
-  font-family: -apple-system, 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-weight: 400;
-  font-size: 17px;
-  display: table;
-  table-layout: fixed;
-  position: absolute;
-  bottom: 0px;
-  left: 0px;
-  right: 0px;
-  white-space: nowrap;
-  margin: 0;
-  padding: 0;
-  height: 49px;
-  background-color: #fff;
-  border-top: 1px solid #ccc;
-  width: 100%;
-}
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-  .tab-bar {
-    border-top: none;
-    -webkit-background-size: 100% 1px;
-    background-size: 100% 1px;
-    background-repeat: no-repeat;
-    background-position: top;
-    background-image: -webkit-linear-gradient(270deg, #ccc, #ccc 50%, transparent 50%);
-    background-image: -moz-linear-gradient(270deg, #ccc, #ccc 50%, transparent 50%);
-    background-image: -o-linear-gradient(270deg, #ccc, #ccc 50%, transparent 50%);
-    background-image: linear-gradient(180deg, #ccc, #ccc 50%, transparent 50%);
-  }
-}
+
 .tab-bar__item {
   font-family: -apple-system, 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -179,32 +147,22 @@
   bottom: 49px;
   z-index: 0;
 }
-.tab-bar--top {
-  position: relative;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: auto;
-  border-top: none;
-  border-bottom: 1px solid #ccc;
-}
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-  .tab-bar--top {
-    border-bottom: none;
-    -webkit-background-size: 100% 1px;
-    background-size: 100% 1px;
-    background-repeat: no-repeat;
-    background-position: bottom;
-    background-image: -webkit-linear-gradient(90deg, #ccc, #ccc 50%, transparent 50%);
-    background-image: -moz-linear-gradient(90deg, #ccc, #ccc 50%, transparent 50%);
-    background-image: -o-linear-gradient(90deg, #ccc, #ccc 50%, transparent 50%);
-    background-image: linear-gradient(0deg, #ccc, #ccc 50%, transparent 50%);
-  }
-}
 .tab-bar--top__content {
   top: 49px;
   left: 0;
   right: 0;
   bottom: 0;
   z-index: 0;
+}
+.tab-bar--top-border__button {
+  background-color: transparent;
+  border-bottom: 4px solid transparent;
+}
+:checked + .tab-bar--top-border__button {
+  background-color: transparent;
+  border-bottom: 4px solid #1284ff;
+}
+
+.tab-bar__pannel{
+        
 }

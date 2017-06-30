@@ -1,10 +1,12 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }    from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { SplitPaneModule } from 'ng2-split-pane/lib/ng2-split-pane';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
+
+import { UiModule } from './ui/ui.module';
 import { AppComponent } from './app.component';
 import { CollectionService } from './services/collection.service';
 import { CollectionComponent } from './collection/collection.component';
@@ -30,7 +32,8 @@ import { UrlencodedComponent } from './request/urlencoded/urlencoded.component';
     HttpModule ,
     FormsModule,
     SplitPaneModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    UiModule
   ],
   providers: [CollectionService],
   bootstrap: [AppComponent]

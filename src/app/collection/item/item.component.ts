@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener, Input } from '@angular/core';
+import { Component, OnInit, HostListener, Input, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'collection-item',
@@ -6,7 +6,7 @@ import { Component, OnInit, HostListener, Input } from '@angular/core';
   styleUrls: ['./item.component.css']
 })
 export class ItemComponent implements OnInit {
-  @Input() item:any;
+  @Input() item: any;
 
   mouseover: boolean = false;
 
@@ -26,6 +26,5 @@ export class ItemComponent implements OnInit {
   }
 
   onItemClick() {
-    console.log(this.item)
   }
 }

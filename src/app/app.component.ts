@@ -9,11 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  requestData:any = {a:1213};
   constructor() {
 
 
   }
 
   ngOnInit() {
+  }
+
+  onSelectItem(requestData:Object){
+    console.log(requestData);
+    this.requestData = requestData;
   }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'request-formdata',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./formdata.component.css']
 })
 export class FormdataComponent implements OnInit {
+
+  @Input() data: any;
 
   constructor() { }
 
