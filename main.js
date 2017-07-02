@@ -7,11 +7,13 @@ require('dotenv').config();
 
 
 let win = null;
-
+app.commandLine.appendSwitch('disable-web-security'); 
 app.on('ready', function () {
 
   // Initialize the window to our specified dimensions
-  win = new BrowserWindow({width: 1000, height: 600, webPreferences: { nodeIntegration: false },
+  win = new BrowserWindow({width: 1000, height: 600, webPreferences: { nodeIntegration: false , webSecurity:false},
+
+    "node-integration": "iframe", // and this line
     "web-preferences": {
       "web-security": false
     }});

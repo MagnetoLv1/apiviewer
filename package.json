@@ -10,7 +10,8 @@
     "electron": "electron .",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "osx-open" : "open -a \"Google Chrome\" --args --disable-web-security --user-data-dir http://localhost:4200"
   },
   "private": true,
   "dependencies": {

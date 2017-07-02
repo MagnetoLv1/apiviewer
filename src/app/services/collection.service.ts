@@ -22,7 +22,7 @@ export class CollectionService {
       headers: this.headers
     });
 
-    return this.http.request('assets/collection.json', options)
+    return this.http.request('http://lomi525.cafe24.com/collection.json', options)
       .map((response: Response) => {
         return response.json();
       });
