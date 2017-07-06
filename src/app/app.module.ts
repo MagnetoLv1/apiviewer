@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import { SplitPaneModule } from 'ng2-split-pane/lib/ng2-split-pane';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {NgxElectronModule} from 'ngx-electron';
+import { RouterModule, UrlSerializer } from '@angular/router';
 
 
 import { UiModule } from './ui/ui.module';
@@ -32,6 +33,7 @@ import { UrlencodedComponent } from './request/urlencoded/urlencoded.component';
   imports: [
     BrowserModule,
     HttpModule ,
+    RouterModule,
     FormsModule,
     SplitPaneModule,
     NgxElectronModule,
