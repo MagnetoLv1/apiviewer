@@ -1,5 +1,5 @@
 // ./main.js
-const {app, BrowserWindow} = require('electron');
+const {app, BrowserWindow, remote} = require('electron');
 const path = require('path');
 const url = require('url');
 
@@ -7,16 +7,11 @@ require('dotenv').config();
 
 
 let win = null;
-app.commandLine.appendSwitch('disable-web-security'); 
 app.on('ready', function () {
 
   // Initialize the window to our specified dimensions
-  win = new BrowserWindow({width: 1000, height: 600, webPreferences: { nodeIntegration: false , webSecurity:false},
-
-    "node-integration": "iframe", // and this line
-    "web-preferences": {
-      "web-security": false
-    }});
+  //webPreferences > webSecurity:false  CORS 무시
+  win = new BrowserWindow({width: 1000, height: 600, webPreferences: {  webSecurity:false}});
 
   // Specify entry point
   if (process.env.PACKAGE === 'true'){
