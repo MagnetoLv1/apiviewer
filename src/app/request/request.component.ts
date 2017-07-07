@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { SendService } from "app/services/send.service";
+import { NativeRequestService } from "app/services/native-request.service";
 
-import {ElectronService} from 'ngx-electron';
 @Component({
   selector: 'app-request',
   templateUrl: './request.component.html',
@@ -11,24 +11,26 @@ export class RequestComponent implements OnInit {
   mode: string = 'formdata';
   @Input() requestData: any;
 
-  constructor(private sendService:SendService, private _electronService: ElectronService) { }
+  constructor(private nativeRequestService: NativeRequestService) {
+  }
 
-  get formdata():any{
-    if(!this.requestData.body) return [];
-      return this.requestData.body.formdata || [];
+  get formdata(): any {
+    if (!this.requestData.body) return [];
+    return this.requestData.body.formdata || [];
   }
 
   ngOnInit() {
     console.log(this.requestData);
   }
 
-  onSend(){
-    console.log(this._electronService.remote.net);
-    this.sendService.send(this.requestData).subscribe(data => {
-      //console.log(data);
+  onSend() {
+    this.nativeRequestService.request(this.requestData).subscribe(data => {
+      console.log('subscribe', data.text());
     },
       error => {
         console.log(error);
       });
+  }
+  onSave() {
   }
 }

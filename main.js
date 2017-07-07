@@ -1,13 +1,15 @@
 // ./main.js
-const {app, BrowserWindow, remote} = require('electron');
+const {app, BrowserWindow, net} = require('electron');
 const path = require('path');
 const url = require('url');
+const remoteRequest = require('./remote.request');
 
 require('dotenv').config();
 
 
 let win = null;
 app.on('ready', function () {
+  remoteRequest();
 
   // Initialize the window to our specified dimensions
   //webPreferences > webSecurity:false  CORS 무시

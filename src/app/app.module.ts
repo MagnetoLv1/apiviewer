@@ -12,6 +12,7 @@ import { UiModule } from './ui/ui.module';
 import { AppComponent } from './app.component';
 import { CollectionService } from './services/collection.service';
 import { SendService } from './services/send.service';
+import { NativeRequestService } from "app/services/native-request.service";
 import { CollectionComponent } from './collection/collection.component';
 import { ItemComponent } from './collection/item/item.component';
 import { RequestComponent } from './request/request.component';
@@ -40,7 +41,7 @@ import { UrlencodedComponent } from './request/urlencoded/urlencoded.component';
     NgbModule.forRoot(),
     UiModule
   ],
-  providers: [CollectionService, SendService],
+  providers: [CollectionService, SendService, NativeRequestService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

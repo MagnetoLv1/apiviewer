@@ -1,17 +1,19 @@
 import { Injectable } from '@angular/core';
-import { Http, Headers, Response, RequestOptions } from '@angular/http';
+import { Http, Headers, Response, RequestOptions, RequestOptionsArgs } from '@angular/http';
 import 'rxjs/add/operator/map'
 
 @Injectable()
 export class CollectionService {
 
   headers: Headers;
-
   constructor(private http: Http) {
     this.http = http;
     this.headers = new Headers();
     this.headers.append('Content-Type', 'multipart/form-data');
     this.headers.append('Access-Control-Allow-Origin', '*');
+
+
+    
   }
 
 
@@ -27,4 +29,5 @@ export class CollectionService {
         return response.json();
       });
   }
+
 }
