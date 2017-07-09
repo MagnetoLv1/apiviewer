@@ -3,10 +3,11 @@ const { ipcMain, net } = require('electron');
 
 module.exports = function () {
 
-        ipcMain.on('native.request', (event, url, options) => {
-
-                const request = net.request(url)
-                request.on('response', (response) => {
+        ipcMain.on('native.request', (event, request, options) => {
+                console.log( request, options)
+                const clientRequest = net.request(request.url)
+                clientRequest.setHeader(request.headers);
+                clientRequest.on('response', (response) => {
                         console.log('start', response.statusCode, response.headers)
                         event.sender.send('remote.response-start', response.statusCode, response.statusMessage, response.headers);
                         response.on('data', (chunk) => {
@@ -16,19 +17,19 @@ module.exports = function () {
                                 event.sender.send('remote.response-complete');
                         })
                 })
-                request.on('finish', () => {
+                clientRequest.on('finish', () => {
                         console.log('finish');
                         event.sender.send('remote.request-finish');
                 })
-                request.on('abort', () => {
+                clientRequest.on('abort', () => {
                         console.log('abort');
                         event.sender.send('remote.request-abort');
                 })
-                request.on('error', (error, a, b) => {
+                clientRequest.on('error', (error, a, b) => {
                         console.log((typeof error), error.toString())
                         event.sender.send('remote.request-error',  error.toString());
                 })
-                request.end()
+                clientRequest.end()
                 event.returnValue = true;
         })
 

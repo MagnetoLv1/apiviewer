@@ -20,12 +20,23 @@ export class RequestComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.requestData);
   }
 
   onSend() {
-    this.nativeRequestService.request(this.requestData).subscribe(data => {
-      console.log('subscribe', data.text());
+
+    console.log(this.requestData);
+
+    let request = new Request(this.requestData.url, {
+      method: this.requestData.method,
+      headers: this.requestData.headers,
+      body: '',
+      mode: 'no-cors',  // "same-origin" | "no-cors" | "cors"
+      credentials: 'same-origin',   //"omit" | "same-origin" | "include"
+      cache: 'default'     //"default" | "no-store" | "reload" | "no-cache" | "force-cache" | "only-if-cached"
+    }); 
+
+    this.nativeRequestService.request(request).subscribe(response => {
+      console.log('subscribe', response, response.text().then(data => console.log(data)));
     },
       error => {
         console.log(error);

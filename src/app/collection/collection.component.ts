@@ -24,6 +24,7 @@ export class CollectionComponent implements OnInit {
   }
 
   onSelectItem(item:any){
+    console.log(item)
     this.selectItem = item;
     this.outEventEmitter.emit(item.request);    
   }
