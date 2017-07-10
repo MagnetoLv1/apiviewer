@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { SendService } from "app/services/send.service";
 import { NativeRequestService } from "app/services/native-request.service";
 
@@ -10,6 +10,10 @@ import { NativeRequestService } from "app/services/native-request.service";
 export class RequestComponent implements OnInit {
   mode: string = 'formdata';
   @Input() requestData: any;
+  @Output() responseChange = new EventEmitter<Response>();
+  @Output() testChange = new EventEmitter<string>();
+
+
 
   constructor(private nativeRequestService: NativeRequestService) {
   }
@@ -24,8 +28,6 @@ export class RequestComponent implements OnInit {
 
   onSend() {
 
-    console.log(this.requestData);
-
     let request = new Request(this.requestData.url, {
       method: this.requestData.method,
       headers: this.requestData.headers,
@@ -33,10 +35,16 @@ export class RequestComponent implements OnInit {
       mode: 'no-cors',  // "same-origin" | "no-cors" | "cors"
       credentials: 'same-origin',   //"omit" | "same-origin" | "include"
       cache: 'default'     //"default" | "no-store" | "reload" | "no-cache" | "force-cache" | "only-if-cached"
-    }); 
-
+    });
+    this.testChange.emit('aaaaaaaaa');
+this.responseChange.emit(new Response());
     this.nativeRequestService.request(request).subscribe(response => {
-      console.log('subscribe', response, response.text().then(data => console.log(data)));
+      //header
+      //response.headers.forEach(function (val, key) { console.log(key + ' -> ' + val); });
+      //response.text().then(data => console.log(data)); 
+
+this.responseChange.emit(new Response());
+      this.testChange.emit('ddddddddd');
     },
       error => {
         console.log(error);

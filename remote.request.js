@@ -4,9 +4,11 @@ const { ipcMain, net } = require('electron');
 module.exports = function () {
 
         ipcMain.on('native.request', (event, request, options) => {
-                console.log( request, options)
                 const clientRequest = net.request(request.url)
-                clientRequest.setHeader(request.headers);
+                console.log(request.headers);
+                if (Object.keys(request.headers).length > 0) {
+                        clientRequest.setHeader(request.headers);
+                }
                 clientRequest.on('response', (response) => {
                         console.log('start', response.statusCode, response.headers)
                         event.sender.send('remote.response-start', response.statusCode, response.statusMessage, response.headers);
@@ -27,7 +29,7 @@ module.exports = function () {
                 })
                 clientRequest.on('error', (error, a, b) => {
                         console.log((typeof error), error.toString())
-                        event.sender.send('remote.request-error',  error.toString());
+                        event.sender.send('remote.request-error', error.toString());
                 })
                 clientRequest.end()
                 event.returnValue = true;

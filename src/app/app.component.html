@@ -52,10 +52,12 @@
       </div>
     </div>
     <div id="sidebar-filler"></div>
-  </div>
+  </div> 
+  <button class="btn" (click)="onTitlechange()">aaaaa</button>
   <div id="main" class="content">
-    <app-request [requestData]="requestData"></app-request>
-    <app-response></app-response>
+    <app-request [requestData]="requestData" (responseChange)="onResponseChange($event)" (testChange)="onTextChange($event)"></app-request>
+    {{title}}---{{headers | json}}
+    <app-response [response]="response"></app-response>
 
   </div>
 </div>

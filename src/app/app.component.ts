@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 
 
@@ -8,8 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+  header:Object = new Object();
+  response: Response = new Response('',{statusText:'test'});
   title = 'app';
-  requestData:any = {a:1213};
+  requestData: any = { a: 1213 };
   constructor() {
 
 
@@ -18,8 +21,23 @@ export class AppComponent {
   ngOnInit() {
   }
 
-  onSelectItem(requestData:Object){
+  onSelectItem(requestData: Object) {
     console.log(requestData);
     this.requestData = requestData;
+  }
+
+  onResponseChange(response: Response) {
+     response.headers.forEach(function (val, key) { console.log(key + ' -> ' + val); });
+    this.response = response;
+    console.log(this.response );
+  }
+
+  onTextChange(title: string) {
+    this.title = title;
+  }
+
+  
+  get headers() {
+    return this.response.statusText;
   }
 }

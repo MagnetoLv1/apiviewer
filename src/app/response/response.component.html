@@ -14,14 +14,11 @@
   </div>
   <div id="response-success-container">
     <div id="response-top-bar">
-
+{{response | json}} -- {{headers}}--{{response.status}}--{{hh}}
       <ngb-tabset>
         <ngb-tab title="Body">
           <ng-template ngbTabContent>
-            <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth
-              master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh
-              dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum
-              iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+            <p></p>
           </ng-template>
         </ngb-tab>
         <ngb-tab title="Cookies">
@@ -46,7 +43,7 @@
 
 
       <ul class="response-tabs clearfix">
-        <li class="active" data-section="body">Body</li>
+        <li class="active" data-section="body">Body3</li>
         <li data-section="cookies" id="response-tabs-cookies">Cookies</li>
         <li data-section="headers">Headers</li>
       </ul>
