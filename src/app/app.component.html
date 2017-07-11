@@ -55,8 +55,7 @@
   </div> 
   <button class="btn" (click)="onTitlechange()">aaaaa</button>
   <div id="main" class="content">
-    <app-request [requestData]="requestData" (responseChange)="onResponseChange($event)" (testChange)="onTextChange($event)"></app-request>
-    {{title}}---{{headers | json}}
+    <app-request [requestData]="requestData" (responseChange)="onResponseChange($event)"></app-request>
     <app-response [response]="response"></app-response>
 
   </div>

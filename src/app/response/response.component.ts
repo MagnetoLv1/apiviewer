@@ -8,27 +8,30 @@ import { Component, OnInit, Input, OnChanges } from '@angular/core';
 })
 export class ResponseComponent implements OnChanges, OnInit {
 
-  @Input() response: Response = new Response();
+  private _response: Response;
+  private _body: String;
+  @Input() set response(res: Response) {
+    if (!res) return;
+    this._response = res;
+    if (!this._response.body) return;
+    this._response.text().then(text => this._body = text);
+  }
   constructor() { }
-  hh:string = '';
 
   ngOnChanges(changes: {}) {
-    this.response.headers.forEach((val, key) => {
-      console.log('ResponseComponent', key, val)
-      this.hh+=val;
-    });
-    console.log('ngOnChanges',this.response);
+    console.log('ngOnChanges', changes);
   }
 
+  get body() {
+    return this._body;
+  }
+
+  get cookies() {
+    return this._response.headers.get('Set-Cookie');
+  }
   get headers() {
-    let aaa = [];
-    this.response.headers.forEach((val, key) => {
-      aaa[key] = val;
-    });
-    return aaa.join(',');
+    return this._response.headers;
   }
-
-
   ngOnInit() {
   }
 

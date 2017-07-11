@@ -11,11 +11,10 @@ export class RequestComponent implements OnInit {
   mode: string = 'formdata';
   @Input() requestData: any;
   @Output() responseChange = new EventEmitter<Response>();
-  @Output() testChange = new EventEmitter<string>();
 
 
 
-  constructor(private nativeRequestService: NativeRequestService) {
+  constructor(private nativeRequestService: NativeRequestService, private sendService: SendService) {
   }
 
   get formdata(): any {
@@ -27,7 +26,6 @@ export class RequestComponent implements OnInit {
   }
 
   onSend() {
-
     let request = new Request(this.requestData.url, {
       method: this.requestData.method,
       headers: this.requestData.headers,
@@ -36,19 +34,14 @@ export class RequestComponent implements OnInit {
       credentials: 'same-origin',   //"omit" | "same-origin" | "include"
       cache: 'default'     //"default" | "no-store" | "reload" | "no-cache" | "force-cache" | "only-if-cached"
     });
-    this.testChange.emit('aaaaaaaaa');
-this.responseChange.emit(new Response());
-    this.nativeRequestService.request(request).subscribe(response => {
-      //header
-      //response.headers.forEach(function (val, key) { console.log(key + ' -> ' + val); });
-      //response.text().then(data => console.log(data)); 
 
-this.responseChange.emit(new Response());
-      this.testChange.emit('ddddddddd');
-    },
-      error => {
-        console.log(error);
-      });
+    this.nativeRequestService.request(request).then(response => {
+      //header
+      //response.headers.forEach(function (val, key) { console.log(key + ' -------> ' + val); });
+      //response.text().then(data => console.log('----------->',data)); 
+
+      this.responseChange.emit(response);
+    });
   }
   onSave() {
   }

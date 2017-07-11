@@ -57,6 +57,7 @@ export class SendService {
   request(url: string | Request, options?: RequestOptionsArgs): Observable<Response> {
 
 
+        console.log('request---------------------')
     const request = this._electronService.remote.net.request('http://api.m.afreecatv.com/broad/a/list')
     request.chunkedEncoding =false;
     request.on('response', (response) => {
@@ -67,16 +68,17 @@ export class SendService {
       let total = 0;
       response.on('data', (chunk) => {
         total += chunk.length;
-        console.log(`BODY`, total);
+        console.log(`BODY------------------------`, total);
       })
-      response.on('end', () => {
-        console.log('No more data in response.')
+      console.log(response.listeners);
+      response.on('end', (dd) => {
+        console.log('No more data in response.----------------')
       })
       response.on('aborted', () => {
-        console.log('aborted')
+        console.log('aborted------------------')
       })
       response.on('error', () => {
-        console.log('error')
+        console.log('error-------------')
       })
     })
     request.end()
