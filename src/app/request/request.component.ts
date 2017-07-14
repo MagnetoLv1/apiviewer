@@ -8,8 +8,7 @@ import { NativeRequestService } from "app/services/native-request.service";
   styleUrls: ['./request.component.css']
 })
 export class RequestComponent implements OnInit {
-  mode: string = 'formdata';
-  @Input() requestData: any;
+  @Input() request: any;
   @Output() responseChange = new EventEmitter<Response>();
 
 
@@ -18,29 +17,38 @@ export class RequestComponent implements OnInit {
   }
 
   get formdata(): any {
-    if (!this.requestData.body) return [];
-    return this.requestData.body.formdata || [];
+    if (!this.request.body) return [];
+    return this.request.body.formdata || [];
   }
 
   ngOnInit() {
   }
+  get method() {
+    return this.request.method  ? this.request.method : 'GET';
+  }
+
+  get mode() {
+    return this.request.body ? this.request.body.mode : 'form-data';
+  }
 
   onSend() {
-    let request = new Request(this.requestData.url, {
-      method: this.requestData.method,
-      headers: this.requestData.headers,
-      body: '',
+    console.log(this.request);
+    let req = new Request(this.request.url, {
+      method: this.request.method,
+      headers: this.request.headers,
+      body: {},
       mode: 'no-cors',  // "same-origin" | "no-cors" | "cors"
       credentials: 'same-origin',   //"omit" | "same-origin" | "include"
       cache: 'default'     //"default" | "no-store" | "reload" | "no-cache" | "force-cache" | "only-if-cached"
     });
 
-    this.nativeRequestService.request(request).then(response => {
+    this.nativeRequestService.request(req).then(response => {
       //header
       //response.headers.forEach(function (val, key) { console.log(key + ' -------> ' + val); });
       //response.text().then(data => console.log('----------->',data)); 
-
       this.responseChange.emit(response);
+    }, error => {
+      console.log(error)
     });
   }
   onSave() {

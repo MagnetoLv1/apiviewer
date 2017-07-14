@@ -6,6 +6,7 @@ import { SplitPaneModule } from 'ng2-split-pane/lib/ng2-split-pane';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxElectronModule } from 'ngx-electron';
 import { RouterModule, UrlSerializer } from '@angular/router';
+import { Broadcaster } from 'ng2-broadcast';
 
 
 import { UiModule } from './ui/ui.module';
@@ -24,6 +25,7 @@ import { PrettyJsonModule, SafeJsonPipe } from 'angular2-prettyjson';
 import { JsonPipe } from '@angular/common';
 import { BodyComponent } from './response/body/body.component';
 import { WebviewDirective } from './directive/webview.directive';
+import { GroupComponent } from './collection/group/group.component';
 // Pleas note the module is no in the root
 
 @NgModule({
@@ -36,7 +38,8 @@ import { WebviewDirective } from './directive/webview.directive';
     FormdataComponent,
     UrlencodedComponent,
     BodyComponent,
-    WebviewDirective
+    WebviewDirective,
+    GroupComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +53,7 @@ import { WebviewDirective } from './directive/webview.directive';
     PrettyJsonModule
     
   ],
-  providers: [CollectionService, SendService, NativeRequestService, FilesystemService, JsonPipe, SafeJsonPipe],
+  providers: [CollectionService, SendService, NativeRequestService, FilesystemService, JsonPipe, SafeJsonPipe, Broadcaster],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

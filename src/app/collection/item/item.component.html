@@ -1,17 +1,9 @@
-<li class="sidebar-collection-request sidebar-request clearfix">
-        <div class="request-actions" [hidden]="!mouseover">
-            <a  class="request-actions-edit">
-                <img src="assets/img/edit.png" style="vertical-align: middle;">
-            </a>
-            <a  class="request-actions-delete">
-                <img src="assets/img/delete.png" style="vertical-align: middle;">
-            </a>
-        </div>
-        <div class="request request-actions-load">
-            <a><span class="label label-method-POST">POST</span>
-                <span class="request-name">
-                {{item.name}}
-                </span>
-            </a>
-        </div>
-    </li>
+<li (click)="onItemClick($event)">
+    <span class="button switch "  [ngClass]="nodeClass"></span>
+    <a  title="pNode 01">
+            <span class="button" [ngClass]="itemClass"></span>
+            <span class="node_name">{{item.name}}</span>
+        </a>
+    <collection-group [item]="item.item" [level]="level+1" *ngIf="item.item" [hidden]="!open"></collection-group>
+
+</li>

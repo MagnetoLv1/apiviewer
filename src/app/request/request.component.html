@@ -1,3 +1,4 @@
+
 <section id="request">
   <div id="request-builder">
     <div id="request-types" class="clearfix">
@@ -80,13 +81,13 @@
     <div id="request-url" class="clearfix">
       <div id="request-url-wrapper">
         <div id="request-url-container">
-          <input type="text" [(ngModel)]="requestData.url" name="url" id="url" tabindex="1" class="input-text-light" placeholder="Enter request URL here" />
+          <input type="text" [(ngModel)]="request.url" name="url" id="url" tabindex="1" class="input-text-light" placeholder="Enter request URL here" />
         </div>
       </div>
       <div id="request-modifiers">
         <div id="request-method-container">
-          <select id="request-method-selector" [(ngModel)]="requestData.method">
-                        <option value="GET" selected>GET</option>
+          <select id="request-method-selector" [(ngModel)]="method">
+                        <option value="GET">GET</option>
                         <option value="POST">POST</option>
                         <option value="PUT">PUT</option>
                         <option value="PATCH">PATCH</option>
@@ -130,7 +131,8 @@
 
     <div>
       <div class="clearfix">
-        <div class="btn-group" data-toggle="buttons">
+        
+        <div class="btn-group" data-toggle="buttons" *ngIf="request.body">
           <label class="btn btn-primary" [class.active]="mode=='formdata'">
                 <input type="radio" [(ngModel)]="mode" value="formdata">form-data
               </label>

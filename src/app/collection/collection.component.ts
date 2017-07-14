@@ -8,24 +8,30 @@ import { CollectionService } from '../services/collection.service';
 })
 export class CollectionComponent implements OnInit {
 
-  private collection:Array<Object>;
+  private collection:any;
   private selectItem:Object;
-  @Output() outEventEmitter: EventEmitter<any> = new EventEmitter<any>();
 
   constructor(private collectionService:CollectionService) { }
 
   ngOnInit() {
     this.collectionService.getCollection().subscribe(data => {
-      this.collection = data.item;
+      
+      this.collection = data;
+      var ddd = {ddd:33434};
+      console.log('11111111111111111,',typeof this.collection.item, ddd.ddd);
     },
       error => {
         console.log(error);
       });
   }
 
-  onSelectItem(item:any){
-    console.log(item)
-    this.selectItem = item;
-    this.outEventEmitter.emit(item.request);    
+  get item():Array<Object>{
+    return this.collection?this.collection.item:[];
   }
+
+  
+  onItemClick($event) {
+    console.log(event)
+  }
+
 }

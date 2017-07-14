@@ -21,7 +21,7 @@
         </ul>
       </div>
     </div>
-    <div id="sidebar-sections" class="clearfix">
+    <div class="clearfix">
       <div id="history-options" class="section-options">
         <a class="history-actions-delete" rel="tooltip" data-placement="bottom" data-original-title="Clear history">
                 <img src="assets/img/trash-empty.png" style="width:24px; height:24px; vertical-align: middle;"/>
@@ -39,9 +39,9 @@
         <li class="active"><a href="#sidebar-section-history" data-id="history" data-toggle="tab">History</a></li>
         <li><a href="#sidebar-section-collections" data-id="collections" data-toggle="tab">Collections</a></li>
       </ul>
-      <div id="sidebar-section-data">
+      <div>
         <div class="tab-pane active" id="sidebar-section-history">
-          <app-collection  (outEventEmitter)="onSelectItem($event)">
+          <app-collection >
 
           </app-collection>
         </div>
@@ -53,9 +53,8 @@
     </div>
     <div id="sidebar-filler"></div>
   </div> 
-  <button class="btn" (click)="onTitlechange()">aaaaa</button>
   <div id="main" class="content">
-    <app-request [requestData]="requestData" (responseChange)="onResponseChange($event)"></app-request>
+    <app-request [request]="request" (responseChange)="onResponseChange($event)"></app-request>
     <app-response [response]="response"></app-response>
 
   </div>

@@ -27,7 +27,7 @@ export class SendService {
   }
 
 
-  send(requestData: any) {
+  send(request: any) {
     console.log(1111111, this.headers.getAll('Content-Type'));
     this.headers.forEach(function (value, key) {
       console.log(key, value)
@@ -38,7 +38,7 @@ export class SendService {
     const url = parseuri('http://lomi525.cafe24.com/collection.json?a=b&c=d#23423');
     console.log('parseuri=', url);
     console.log('querystring=', parse(url.query));
-    console.log(requestData);
+    console.log(request);
     const options = new RequestOptions({
       headers: this.headers
     });
