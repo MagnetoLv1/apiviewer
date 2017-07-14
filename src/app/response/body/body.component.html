@@ -1,0 +1,26 @@
+<div class="button-bar" style="width:280px;margin:0 auto;">
+  <div class="button-bar__item">
+    <input type="radio" name="format" value="putty" [(ngModel)]="format">
+    <button class="button-bar__button">Putty</button>
+  </div>
+  <div class="button-bar__item">
+    <input type="radio" name="format" value="raw" [(ngModel)]="format">
+    <button class="button-bar__button">Raw</button>
+  </div>
+  <div class="button-bar__item">
+    <input type="radio" name="format" value="privew" [(ngModel)]="format">
+    <button class="button-bar__button">Preview</button>
+  </div>
+</div>
+
+<button (click)="ss()">하하</button>
+
+<pre [innerHtml]="bodyJson | prettyjson:3" [hidden]="format!='putty'">
+</pre>
+
+<pre [innerText]="body" [hidden]="format!='raw'">
+</pre>
+
+<webview id="webview" src="about:blank"  autosize="on" [ngStyle]="{'display': (format=='privew')?'block':'none'}">
+
+</webview>

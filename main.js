@@ -15,6 +15,7 @@ app.on('ready', function () {
   //webPreferences > webSecurity:false  CORS 무시
   win = new BrowserWindow({width: 1000, height: 600, webPreferences: {  webSecurity:false}});
 
+    console.log(__dirname);
   // Specify entry point
   if (process.env.PACKAGE === 'true'){
     win.loadURL(url.format({
