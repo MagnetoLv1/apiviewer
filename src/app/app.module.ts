@@ -25,6 +25,7 @@ import { BodyComponent } from './builder/response/body/body.component';
 import { WebviewDirective } from './directive/webview.directive';
 import { GroupComponent } from './collection/group/group.component';
 import { BuilderComponent } from './builder/builder.component';
+import { EditComponent } from './collection/edit/edit.component';
 // Pleas note the module is no in the root
 
 @NgModule({
@@ -39,7 +40,8 @@ import { BuilderComponent } from './builder/builder.component';
     BodyComponent,
     WebviewDirective,
     GroupComponent,
-    BuilderComponent
+    BuilderComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,
