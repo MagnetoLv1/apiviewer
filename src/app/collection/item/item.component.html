@@ -4,6 +4,6 @@
             <span class="button" [ngClass]="itemClass"></span>
             <span class="node_name">{{item.name}}</span>
         </a>
-    <collection-group [item]="item.item" [level]="level+1" *ngIf="item.item" [hidden]="!open"></collection-group>
+    <collection-group [item]="item.item" [level]="level+1" *ngIf="item.item" [path]="path+'/item'" [hidden]="!open"></collection-group>
 
 </li>

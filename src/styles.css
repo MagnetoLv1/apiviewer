@@ -77,14 +77,6 @@ header {
     border-bottom-color: #999 !important;
 }
 
-#main {
-    background: #fff;
-    float: left;
-    padding-bottom: 20px;
-    margin-left: 350px;
-    min-height: 100%;
-}
-
 footer {
     display: block;
     font-size: 12px;
@@ -804,9 +796,6 @@ li .right {
     margin-left: 295px;
 }
 
-#collections-options {
-    margin-left: 270px;
-}
 
 #collections-options {
     

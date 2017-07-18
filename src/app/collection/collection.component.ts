@@ -11,14 +11,15 @@ export class CollectionComponent implements OnInit {
   private collection:any;
   private selectItem:Object;
 
-  constructor(private collectionService:CollectionService) { }
+  constructor(private collectionService:CollectionService) {
+
+    
+   }
 
   ngOnInit() {
     this.collectionService.getCollection().subscribe(data => {
       
       this.collection = data;
-      var ddd = {ddd:33434};
-      console.log('11111111111111111,',typeof this.collection.item, ddd.ddd);
     },
       error => {
         console.log(error);
@@ -31,6 +32,8 @@ export class CollectionComponent implements OnInit {
 
   
   onItemClick($event) {
+
+    //this.collectionService.getCollection();
     console.log(event)
   }
 

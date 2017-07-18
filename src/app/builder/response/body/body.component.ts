@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
-import { FilesystemService } from '../../services/filesystem.service';
+import { FilesystemService } from '../../../services/filesystem.service';
 import * as Electron from 'electron';
 import * as fs from 'fs';
 @Component({

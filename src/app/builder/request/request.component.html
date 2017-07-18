@@ -1,9 +1,8 @@
-
 <section id="request">
   <div id="request-builder">
     <div id="request-types" class="clearfix">
       <ul class="request-helper-tabs">
-        <li class="active" data-id="normal">Normal</li>
+        <li class="active" data-id="normal">Normal {{req}}</li>
       </ul>
       <div id="environment-selector-wrapper" *ngIf="0">
         <div id="environment-quicklook-wrapper">
@@ -173,7 +172,7 @@
         tabindex="5" (click)="onSend()">
             Send
         </button>
-      <button class="btn" id="update-request-in-collection">Save
+      <button class="btn" id="update-request-in-collection" (click)="onSave()">Save
         </button>
       <button class="btn" id="add-to-collection" href="#modal-add-to-collection" data-toggle="modal" data-backdrop="static" data-keyboard="true">Add to collection
         </button>

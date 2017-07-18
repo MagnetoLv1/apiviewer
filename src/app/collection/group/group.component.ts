@@ -9,6 +9,7 @@ export class GroupComponent implements OnInit {
 
   @Input() level: number = 0;
   @Input() item: Array<Object> = [];
+  @Input() path: string;
   constructor() { }
 
   ngOnInit() {
@@ -18,7 +19,4 @@ export class GroupComponent implements OnInit {
     return this.level > 0 ? 'line' : 'ztree';
   }
 
-  onClick() {
-    alert('Click!');
-  }
 }

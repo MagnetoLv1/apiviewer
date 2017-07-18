@@ -9,6 +9,7 @@ import { Broadcaster } from 'ng2-broadcast';
 export class ItemComponent implements OnInit {
   @Input() item: any;
   @Input() level: number;
+  @Input() path: string;
 
   mouseover: boolean = false;
   open: boolean = false;
@@ -26,18 +27,21 @@ export class ItemComponent implements OnInit {
   constructor(private broadcaster: Broadcaster) { }
 
   ngOnInit() {
+    this.open = this.openState;
   }
 
 
   onItemClick($event) {
-    console.log(this.isFolder())
+    console.log(this.isFolder(), this.path)
     if (this.isFolder()) {
       this.open = !this.open
+      this.openState = this.open;
     }
     else {
-      this.broadcaster.broadcast('item',this.item);
+      this.item.path = this.path;
+      this.broadcaster.broadcast('item', this.item);
     }
-      $event.stopPropagation(); //이벤트가 부모로 올라가지 못하게
+    $event.stopPropagation(); //이벤트가 부모로 올라가지 못하게
   }
 
 
@@ -65,5 +69,15 @@ export class ItemComponent implements OnInit {
 
   isFolder(): boolean {
     return this.item.request ? false : true;
+  }
+
+  /**
+   * 열려있었는지 상태값
+   */
+  private get openState(): boolean {
+    return localStorage.getItem(this.path) == 'true';
+  }
+  private set openState(state: boolean) {
+    localStorage.setItem(this.path, state.toString());
   }
 }

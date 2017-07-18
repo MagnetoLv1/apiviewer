@@ -1,0 +1,4 @@
+<div id="main" class="content">
+  <app-request [request]="item.request" (responseChange)="onResponseChange($event)"  (saveEvent)="onSaveEvent($event)"></app-request>
+  <app-response [response]="item.response"></app-response>
+</div>

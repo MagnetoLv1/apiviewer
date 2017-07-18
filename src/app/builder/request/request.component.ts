@@ -1,5 +1,4 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { SendService } from "app/services/send.service";
 import { NativeRequestService } from "app/services/native-request.service";
 
 @Component({
@@ -8,12 +7,25 @@ import { NativeRequestService } from "app/services/native-request.service";
   styleUrls: ['./request.component.css']
 })
 export class RequestComponent implements OnInit {
-  @Input() request: any;
+  @Input() request: any = {
+    url: '',
+    mothod: 'GET',
+    body: {
+    },
+    header: {
+    }
+  };
+
+  req: any;
   @Output() responseChange = new EventEmitter<Response>();
+  @Output() saveEvent = new EventEmitter<String>();
 
 
 
-  constructor(private nativeRequestService: NativeRequestService, private sendService: SendService) {
+  constructor(private nativeRequestService: NativeRequestService) {
+    this.req = {
+      dddd: 3333
+    }
   }
 
   get formdata(): any {
@@ -22,9 +34,12 @@ export class RequestComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.req = {
+      dddd: 3333
+    }
   }
   get method() {
-    return this.request.method  ? this.request.method : 'GET';
+    return this.request.method ? this.request.method : 'GET';
   }
 
   get mode() {
@@ -51,6 +66,9 @@ export class RequestComponent implements OnInit {
       console.log(error)
     });
   }
+
+
   onSave() {
+    this.saveEvent.emit('save');
   }
 }

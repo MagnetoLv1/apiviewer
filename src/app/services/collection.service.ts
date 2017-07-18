@@ -51,4 +51,10 @@ export class CollectionService {
       */
   }
 
+
+
+  saveItem(path, item): void | number {
+    firebase.database().ref(path).set(item);
+  }
+
 }

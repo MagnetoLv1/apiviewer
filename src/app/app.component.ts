@@ -9,27 +9,20 @@ import { Broadcaster } from "ng2-broadcast";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
-  response: Response = new Response();
   title = 'app';
-  request: any = { a: 1213 };
-  constructor(private broadcaster: Broadcaster) {
-
-    /**
-     * 아이템을 선택했을 경우
-     */
-    this.broadcaster.on<string>('item')
-      .subscribe((item:any) => {
-        console.log(item);
-        this.request = item.request;
-      });
-
+  size = [25, 75];
+  constructor() {
   }
 
   ngOnInit() {
+    if (localStorage.getItem('split-size')) {
+      this.size = JSON.parse(localStorage.getItem('split-size'));
+    }
   }
 
-  onResponseChange(response: Response) {
-    this.response = response;
+  onDragEnd($event) {
+    console.log($event)
+
+    localStorage.setItem('split-size', JSON.stringify($event));
   }
 }
