@@ -1,8 +1,9 @@
-<li (click)="onItemClick($event)">
-    <span class="button switch "  [ngClass]="nodeClass"></span>
-    <a  title="pNode 01">
+<li (click)="onItemClick($event)" (contextmenu)="onContextMenu($event, item)">
+    <span class="button switch " [ngClass]="nodeClass"></span>
+    <a title="pNode 01">
             <span class="button" [ngClass]="itemClass"></span>
             <span class="node_name">{{item.name}}</span>
+  <button (click)="onEditClick($event)">Edit</button>
         </a>
     <collection-group [item]="item.item" [level]="level+1" *ngIf="item.item" [path]="path+'/item'" [hidden]="!open"></collection-group>
 

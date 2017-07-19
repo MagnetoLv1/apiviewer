@@ -1,4 +1,4 @@
-li{padding:0; margin:0; list-style:none; line-height:14px; text-align:left; white-space:nowrap; outline:0}
+li{padding:0; margin:0; list-style:none; line-height:14px; text-align:left; white-space:nowrap; outline:0; height: }
 :host >>> li /deep/ ul{ }
 :host >>> li /deep/ ul.line{ margin:0; padding:0 0 0 18px;background:url(/assets/img/tree/line_conn.gif) 0 0 repeat-y;}
 

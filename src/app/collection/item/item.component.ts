@@ -1,5 +1,9 @@
 import { Component, OnInit, HostListener, Input, EventEmitter, Output } from '@angular/core';
 import { Broadcaster } from 'ng2-broadcast';
+import { ElectronService } from 'ngx-electron';
+import { Overlay, overlayConfigFactory } from 'angular2-modal';
+import { Modal, BSModalContext } from 'angular2-modal/plugins/bootstrap';
+import { RequestModalContext, EditComponent } from '../edit/edit.component';
 
 @Component({
   selector: 'collection-item',
@@ -23,8 +27,13 @@ export class ItemComponent implements OnInit {
   onMouseOut() {
     this.mouseover = false;
   }
+  ipcRenderer: Electron.IpcRenderer;
+  menu: Electron.Menu;
+  menuItem: Electron.MenuItem;
 
-  constructor(private broadcaster: Broadcaster) { }
+  constructor(private broadcaster: Broadcaster, private electronService: ElectronService, public modal: Modal) {
+    this.ipcRenderer = electronService.ipcRenderer;
+  }
 
   ngOnInit() {
     this.open = this.openState;
@@ -32,7 +41,6 @@ export class ItemComponent implements OnInit {
 
 
   onItemClick($event) {
-    console.log(this.isFolder(), this.path)
     if (this.isFolder()) {
       this.open = !this.open
       this.openState = this.open;
@@ -42,6 +50,9 @@ export class ItemComponent implements OnInit {
       this.broadcaster.broadcast('item', this.item);
     }
     $event.stopPropagation(); //이벤트가 부모로 올라가지 못하게
+  }
+
+  public onContextMenu($event: MouseEvent, item: any): void {
   }
 
 
@@ -79,5 +90,25 @@ export class ItemComponent implements OnInit {
   }
   private set openState(state: boolean) {
     localStorage.setItem(this.path, state.toString());
+  }
+
+
+  onEditClick($event) {
+    console.log(this.item);
+
+    this.modal.open(EditComponent, overlayConfigFactory({
+      isBlocking: false,
+      path: this.path,
+      item: this.item
+    },
+      BSModalContext)).then((resultPromise) => {
+        return resultPromise.result.then((result) => {
+          console.log(result);
+        },
+          () => {
+            console.log('Rejected');
+          });
+      });
+    $event.stopPropagation(); //이벤트가 부모로 올라가지 못하게
   }
 }
