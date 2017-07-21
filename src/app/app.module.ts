@@ -10,6 +10,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ModalModule } from 'angular2-modal';
 import { BootstrapModalModule } from 'angular2-modal/plugins/bootstrap';
 import { PrettyJsonModule, SafeJsonPipe } from 'angular2-prettyjson';   //Json Prtty 
+    import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+    
 
 import { AppComponent } from './app.component';
 import { CollectionService } from './services/collection.service';
@@ -56,7 +59,9 @@ import { EditComponent } from './collection/edit/edit.component';
     PrettyJsonModule,
     AngularSplitModule,
     ModalModule.forRoot(),
-    BootstrapModalModule
+    BootstrapModalModule,
+     ToastrModule.forRoot(), // ToastrModule added
+    BrowserAnimationsModule,// required animations module
   ],
   providers: [CollectionService, SendService, NativeRequestService, FilesystemService, JsonPipe, SafeJsonPipe, Broadcaster],
   bootstrap: [AppComponent],

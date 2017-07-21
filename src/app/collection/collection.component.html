@@ -1,3 +1,13 @@
-<div class="zTreeDemoBackground left">
+<div class="collection zTreeDemoBackground left">
+    <div class="row">
+        <div class="col-md-12">
+            <button type="button" class="btn btn-default btn-sm  pull-right" (click)="onAddCollection()">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+            </button>
+            <button type="button" class="btn btn-default btn-sm  pull-right" (click)="onItemClick($event)">
+                aaaa
+            </button>
+        </div>
+    </div>
     <collection-group [item]="collection.item" [level]="0" [path]="'/api/item'" *ngIf="collection"></collection-group>
 </div>

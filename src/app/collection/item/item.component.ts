@@ -1,9 +1,11 @@
-import { Component, OnInit, HostListener, Input, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, HostListener, Input, EventEmitter, Output, ViewContainerRef } from '@angular/core';
 import { Broadcaster } from 'ng2-broadcast';
 import { ElectronService } from 'ngx-electron';
 import { Overlay, overlayConfigFactory } from 'angular2-modal';
 import { Modal, BSModalContext } from 'angular2-modal/plugins/bootstrap';
-import { RequestModalContext, EditComponent } from '../edit/edit.component';
+import { RequestModalContext, EditComponent, MODE, TYPE } from '../edit/edit.component';
+import { CollectionService } from "app/services/collection.service";
+import { ToastrService } from "ngx-toastr";
 
 @Component({
   selector: 'collection-item',
@@ -31,8 +33,10 @@ export class ItemComponent implements OnInit {
   menu: Electron.Menu;
   menuItem: Electron.MenuItem;
 
-  constructor(private broadcaster: Broadcaster, private electronService: ElectronService, public modal: Modal) {
+  constructor(private broadcaster: Broadcaster, private collectionService: CollectionService,
+    private electronService: ElectronService, public modal: Modal, private toastr: ToastrService, ) {
     this.ipcRenderer = electronService.ipcRenderer;
+
   }
 
   ngOnInit() {
@@ -94,12 +98,13 @@ export class ItemComponent implements OnInit {
 
 
   onEditClick($event) {
-    console.log(this.item);
 
     this.modal.open(EditComponent, overlayConfigFactory({
       isBlocking: false,
+      mode: MODE.CREATE,
+      type: this.isFolder() ? TYPE.FOLDER : TYPE.REQUEST,
       path: this.path,
-      item: this.item
+      item: this.item,
     },
       BSModalContext)).then((resultPromise) => {
         return resultPromise.result.then((result) => {
@@ -109,6 +114,15 @@ export class ItemComponent implements OnInit {
             console.log('Rejected');
           });
       });
+    $event.stopPropagation(); //이벤트가 부모로 올라가지 못하게
+  }
+
+  onDeleteClick($event) {
+    console.log(this.path);
+    this.collectionService.slice(this.path).then(() => {
+      this.toastr.info('삭제 되었습니다.');
+    });
+
     $event.stopPropagation(); //이벤트가 부모로 올라가지 못하게
   }
 }

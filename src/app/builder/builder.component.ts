@@ -34,6 +34,6 @@ export class BuilderComponent implements OnInit {
   }
 
   onSaveEvent() {
-    this.collectionService.saveItem(this.item.path, this.item)
+    this.collectionService.update(this.item.path, this.item)
   }
 }

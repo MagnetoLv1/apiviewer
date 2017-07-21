@@ -1,0 +1,11 @@
+.table-layout {
+    display:table;
+    width:100%;
+}
+.table-layout .table-cell {
+    display:table-cell;    
+}
+.fixed-width-140 {
+    display:table-cell;
+    width:140px;
+}

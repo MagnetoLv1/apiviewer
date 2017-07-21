@@ -41,6 +41,9 @@ export class RequestComponent implements OnInit {
   get method() {
     return this.request.method ? this.request.method : 'GET';
   }
+  set method(val) {
+    this.request.method = val;
+  }
 
   get mode() {
     return this.request.body ? this.request.body.mode : 'form-data';

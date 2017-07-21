@@ -10,7 +10,10 @@ export class CollectionService {
 
   headers: Headers;
   app: firebase.app.App;
+  public modifier: string
   constructor(private http: Http) {
+    this.modifier = Math.random().toString();
+
     this.http = http;
     this.headers = new Headers();
     this.headers.append('Content-Type', 'multipart/form-data');
@@ -24,37 +27,60 @@ export class CollectionService {
       storageBucket: "apiviewer.appspot.com",
       messagingSenderId: "293629322300"
     });
-
-
   }
 
 
-  getCollection(): Observable<Object> {
+
+  getItemListening(): Observable<Object> {
     const collectionSubject: Subject<Object> = new Subject<Object>();
-    var apiRef: firebase.database.Reference = firebase.database().ref('/api');
-    apiRef.on('value', (snapshot) => {
+    var itemRef = firebase.database().ref('/api');
+    itemRef.on('value', (snapshot) => {
+      console.log(snapshot.val())
       collectionSubject.next(snapshot.val());
     });
-
     return collectionSubject.asObservable();
+  }
 
-    /*
-    const options = new RequestOptions({
-      headers: this.headers
+
+  update(path, item): firebase.Promise<any> {
+
+    let updates = {}
+    updates[path] = item;
+    updates['api/modifier'] = this.modifier;
+    updates['api/modify_date'] = (new Date()).getTime();
+    return firebase.database().ref().update(updates);
+  }
+
+  delete(path): firebase.Promise<any> {
+    return this.update(path, null);
+  }
+
+
+  /**
+   * 배열 형식인 경우 index 유지를 위해 delete 가닌 slice 를 사용한다
+   * @param path 
+   */
+  slice(path): firebase.Promise<any> {
+
+    let p = path.split('/');
+    let index = p.pop();
+    let parentPath = p.join('/');
+
+    return firebase.database().ref(parentPath).once('value').then((snapshot) => {
+      var data = snapshot.val();
+      data.splice(index, 1);  //아이템 삭제
+      return this.update(parentPath, data);
     });
-    
-
-    return this.http.request('http://lomi525.cafe24.com/collection.json', options)
-      .map((response: Response) => {
-        return response.json();
-      });
-      */
   }
 
+  push(path, data: Object): firebase.Promise<any> {
 
-
-  saveItem(path, item): void | number {
-    firebase.database().ref(path).set(item);
+    return firebase.database().ref(path).once('value').then((snapshot) => {
+      let cnt = snapshot.val().length;
+      path = path + '/' + cnt;
+      return this.update(path, data);
+    });
   }
+
 
 }

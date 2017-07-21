@@ -78,107 +78,63 @@
     </div>
 
     <div id="request-url" class="clearfix">
-      <div id="request-url-wrapper">
-        <div id="request-url-container">
-          <input type="text" [(ngModel)]="request.url" name="url" id="url" tabindex="1" class="input-text-light" placeholder="Enter request URL here" />
-        </div>
-      </div>
-      <div id="request-modifiers">
-        <div id="request-method-container">
-          <select id="request-method-selector" [(ngModel)]="method">
-                        <option value="GET">GET</option>
-                        <option value="POST">POST</option>
-                        <option value="PUT">PUT</option>
-                        <option value="PATCH">PATCH</option>
-                        <option value="DELETE">DELETE</option>
-                        <option value="COPY">COPY</option>
-                        <option value="HEAD">HEAD</option>
-                        <option value="OPTIONS">OPTIONS</option>                            
-                        <option value="LINK">LINK</option>
-                        <option value="UNLINK">UNLINK</option>
-                        <option value="PURGE">PURGE</option>
-                    </select>
-        </div>
-        <div id="request-url-buttons-container">
-          <button class="btn" id="url-keyvaleditor-actions-open"><i
-                            class="icon-edit"></i> URL params
-                    </button>
-          <button class="btn" id="headers-keyvaleditor-actions-open"><i
-                            class="icon-edit"></i> Headers (<span class="headers-count">0</span>)
-                    </button>
-        </div>
-      </div>
-      <div class="clearfix"></div>
-    </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="table-layout">
+            <div class=" table-cell">
+              <div class="input-group ">
+                <div class="input-group-btn">
 
-    <div id="url-keyvaleditor-container" class="row" style="margin-left: 0px; display: none;">
-      <div id="url-keyvaleditor"></div>
-    </div>
-
-    <div id="headers-keyvaleditor-container" class="row clearfix" style="margin-left: 0px; display: none;">
-      <div class="keyvaleditor-left">
-        <div id="headers-keyvaleditor"></div>
-      </div>
-      <div class="keyvaleditor-right">
-        <div id="headers-keyvaleditor-actions">
-          <input type="button" id="headers-keyvaleditor-actions-manage-presets" class="btn" rel="popover" data-trigger="hover" data-placement="bottom"
-            data-content="Presets let you define groups of headers for quick addition" data-original-title="Header presets"
-            value="Manage presets" /><br/>
-        </div>
-      </div>
-    </div>
-
-    <div>
-      <div class="clearfix">
-        
-        <div class="btn-group" data-toggle="buttons" *ngIf="request.body">
-          <label class="btn btn-primary" [class.active]="mode=='formdata'">
-                <input type="radio" [(ngModel)]="mode" value="formdata">form-data
-              </label>
-          <label class="btn btn-primary" [class.active]="mode=='urlencoded'">
-                <input type="radio" [(ngModel)]="mode" value="urlencoded"> x-www-form-urlencoded
-              </label>
-          <label class="btn btn-primary" [class.active]="mode=='raw'">
-                <input type="radio" [(ngModel)]="mode" value="raw"> raw
-              </label>
-        </div>
+                  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                    (click)="methodDrop= !methodDrop">
+                {{method}} <span class="caret"></span>
+              </button>
+                  <ul class="dropdown-menu" [style.display]="methodDrop?'block':'none'" (click)="methodDrop=false">
+                    <li><a (click)="method='GET'">GET</a></li>
+                    <li><a (click)="method='POST'">POST</a></li>
+                    <li><a (click)="method='PUT'">PUT</a></li>
+                    <li><a (click)="method='PATCH'">PATCH</a></li>
+                    <li><a (click)="method='DELETE'">DELETE</a></li>
+                  </ul>
+                </div>
+                <!-- /btn-group -->
+                <input type="text" [(ngModel)]="request.url" class="form-control" placeholder="Enter request URL here" aria-label="...">
 
 
+              </div>
+              <!-- /input-group -->
+            </div>
+            <div class="fixed-width-140">
+              <button class="btn btn-primary" type="button" data-complete-text="Send request" id="submit-request" tabindex="5" (click)="onSend()">            Send        </button>
+              <button class="btn" id="update-request-in-collection" (click)="onSave()">Save        </button>
+            </div>
+          </div>
+        </div>
+        <!-- /.col-lg-6 -->
       </div>
-      <div id="body-data-containers">
-        <div id="formdata-keyvaleditor-container" class="row" style="margin-left: 0;" *ngIf="mode=='formdata'">
-          <div id="formdata-keyvaleditor">
+      <!-- /.row -->
+
+
+      <ngb-tabset>
+        <ngb-tab title="Header">
+          <ng-template ngbTabContent>2222
+          </ng-template>
+        </ngb-tab>
+        <ngb-tab title="Body">
+          <ng-template ngbTabContent>
             <request-formdata *ngFor="let val of formdata" [data]="val"></request-formdata>
-          </div>
-        </div>
-        <div id="urlencoded-keyvaleditor-container" class="row" style="margin-left: 0;" *ngIf="mode=='urlencoded'">
-          <div id="urlencoded-keyvaleditor">
-            <request-urlencoded></request-urlencoded>
-          </div>
-        </div>
-        <div id="body-data-container" *ngIf="mode=='raw'">
-          <textarea name="data" id="body" tabindex="4" class="inputText"></textarea>
-          <pre id="body-editor-mode-selector-format-result">
-                    </pre>
-        </div>
-      </div>
+          </ng-template>
+        </ngb-tab>
+        <ngb-tab title="URL params">
+          <ng-template ngbTabContent>
+            333
+          </ng-template>
+        </ngb-tab>
+      </ngb-tabset>
     </div>
+
+
   </div>
 
 
-  <div id="request-actions" class="clearfix">
-    <div id="request-actions-primary">
-      <button class="btn btn-primary" data-loading-text="Fetching data..." type="button" data-complete-text="Send request" id="submit-request"
-        tabindex="5" (click)="onSend()">
-            Send
-        </button>
-      <button class="btn" id="update-request-in-collection" (click)="onSave()">Save
-        </button>
-      <button class="btn" id="add-to-collection" href="#modal-add-to-collection" data-toggle="modal" data-backdrop="static" data-keyboard="true">Add to collection
-        </button>
-    </div>
-    <div id="request-actions-secondary">
-      <button class="btn btn-danger" id="request-actions-reset">Reset</button>
-    </div>
-  </div>
 </section>

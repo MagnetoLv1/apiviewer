@@ -38,7 +38,7 @@ export class ResponseComponent implements OnChanges, OnInit {
   }
 
   get cookies() {
-    return this._response.headers.get('Set-Cookie');
+    return this._response.headers?this._response.headers.get('Set-Cookie'):[];
   }
 
   get headers() {
