@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { NativeRequestService } from "app/services/native-request.service";
+import { NgbTabsetConfig } from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
   selector: 'app-request',
@@ -7,36 +8,28 @@ import { NativeRequestService } from "app/services/native-request.service";
   styleUrls: ['./request.component.css']
 })
 export class RequestComponent implements OnInit {
-  @Input() request: any = {
-    url: '',
-    mothod: 'GET',
-    body: {
-    },
-    header: {
-    }
-  };
+  @Input() request: any;
 
-  req: any;
   @Output() responseChange = new EventEmitter<Response>();
   @Output() saveEvent = new EventEmitter<String>();
 
 
 
   constructor(private nativeRequestService: NativeRequestService) {
-    this.req = {
-      dddd: 3333
-    }
+  }
+
+  get urlencoded(): any {
+    return this.request.body.urlencoded;
+  }
+  get raw(): any {
+    return this.request.body.raw;
   }
 
   get formdata(): any {
-    if (!this.request.body) return [];
-    return this.request.body.formdata || [];
+    return this.request.body.formdata;
   }
 
   ngOnInit() {
-    this.req = {
-      dddd: 3333
-    }
   }
   get method() {
     return this.request.method ? this.request.method : 'GET';
@@ -47,6 +40,14 @@ export class RequestComponent implements OnInit {
 
   get mode() {
     return this.request.body ? this.request.body.mode : 'form-data';
+  }
+
+  set mode(value:string) {
+     this.request.body.mode = value;
+  }
+
+  get header() {
+    return this.request.header; 
   }
 
   onSend() {

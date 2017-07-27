@@ -1,4 +1,5 @@
 <div id="main" class="content">
-  <app-request [request]="item.request" (responseChange)="onResponseChange($event)"  (saveEvent)="onSaveEvent($event)"></app-request>
-  <app-response [response]="item.response"></app-response>
+  <app-request [request]="copyItem.request" (responseChange)="onResponseChange($event)"  (saveEvent)="onSaveEvent($event)"></app-request>
+  <hr/>
+  <app-response [response]="copyItem.response"></app-response>
 </div>

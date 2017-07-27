@@ -31,6 +31,8 @@ import { WebviewDirective } from './directive/webview.directive';
 import { GroupComponent } from './collection/group/group.component';
 import { BuilderComponent } from './builder/builder.component';
 import { EditComponent } from './collection/edit/edit.component';
+import { HeaderComponent } from './builder/request/header/header.component';
+import { RawComponent } from './builder/request/raw/raw.component';
 // Pleas note the module is no in the root
 
 @NgModule({
@@ -46,7 +48,9 @@ import { EditComponent } from './collection/edit/edit.component';
     WebviewDirective,
     GroupComponent,
     BuilderComponent,
-    EditComponent
+    EditComponent,
+    HeaderComponent,
+    RawComponent
 
   ],
   imports: [

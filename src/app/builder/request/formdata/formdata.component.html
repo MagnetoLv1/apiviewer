@@ -1,9 +1,13 @@
-<div class="keyvalueeditor-row">
-  <input type="text" class="keyvalueeditor-key" placeholder="Key" name="keyvalueeditor-key" [(ngModel)]="data.key">
-  <input type="text" class="keyvalueeditor-value keyvalueeditor-value-text " placeholder="Value " name="keyvalueeditor-value" [(ngModel)]="data.value">
-  <input type="text" class="keyvalueeditor-value keyvalueeditor-value-text " placeholder="Description " name="keyvalueeditor-description" [(ngModel)]="data.description">
-  <input type="file" multiple="" class="keyvalueeditor-value keyvalueeditor-value-file" placeholder="Value" name="keyvalueeditor-value"
-    value="" style="display: none;"><select class="keyvalueeditor-valueTypeSelector"  [(ngModel)]="data.type">
-      <option value="text" selected="">Text</option><option value="file">File</option></select>
-  <a tabindex="-1" class="keyvalueeditor-delete"><img class="deleteButton" src="assets/img/delete.png"></a>
+<div class="keyvalueeditor-row" *ngFor="let data of formdata; let idx = index">
+  <input type="text" class="keyvalueeditor-key" placeholder="Key" [(ngModel)]="data.key" (keydown)="onKeyDown($event, idx)">
+  <input type="text" class="keyvalueeditor-value keyvalueeditor-value-text " placeholder="Value " [(ngModel)]="data.value"
+    (keydown)="onKeyDown($event, idx)">
+  <input type="text" class="keyvalueeditor-value keyvalueeditor-value-text " placeholder="Description" [(ngModel)]="data.description"
+    (keydown)="onKeyDown($event, idx)">
+  <input type="file" multiple="" class="keyvalueeditor-value keyvalueeditor-value-file" placeholder="Value" style="display: none;">
+  <select class="keyvalueeditor-valueTypeSelector" [(ngModel)]="data.type">
+    <option value="text" selected="">Text</option>
+    <option value="file">File</option>
+    </select>
+  <button type="button" class="btn btn-default btn-circle" (click)="onDeleteClick(idx)" *ngIf="formdata.length-1 != idx"><i class="glyphicon glyphicon-remove"></i></button>
 </div>

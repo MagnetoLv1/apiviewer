@@ -19,6 +19,7 @@ export class CollectionComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.collectionService.test();
     //변경 수신대기
     this.collectionService.getItemListening().subscribe( (data: any)=> {
       //최초에는 toastr 를 띄우지 않음(collection==null)
@@ -38,16 +39,17 @@ export class CollectionComponent implements OnInit {
     this.collection = data;
   }
 
-  get item(): Array<Object> {
-    return this.collection ? this.collection.item : [];
-  }
 
 
   onItemClick($event) {
     this.toastr.info('누군가 Collection을 업데이트 하였습니다.');
   }
 
-  onAddCollection() {
+
+  /**
+   * 폴더 생성 다이얼로그 띄우기
+   */
+  onAddFolder() {
 
     this.modal.open(EditComponent, overlayConfigFactory({
       isBlocking: false,

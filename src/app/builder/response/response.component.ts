@@ -11,11 +11,6 @@ export class ResponseComponent implements OnChanges, OnInit {
   private _response: Response;
   private _body: String;
 
-  test: Object = {
-    'result': 1,
-    'data': []
-  }
-  str: string = '{    "result": 1,    "data": []  }';
 
   @Input() set response(res: Response) {
     if (!res) return;
@@ -30,9 +25,6 @@ export class ResponseComponent implements OnChanges, OnInit {
     console.log('ngOnChanges', changes);
   }
 
-  get test2() {// preserve newlines, etc - use valid JSON
-    return JSON.parse(this.str);
-  }
   get body() {
     return this._body;
   }

@@ -1,8 +1,8 @@
-<div class="keyvalueeditor-row" *ngFor="let data of urlencoded; let idx = index">
+<div class="keyvalueeditor-row" *ngFor="let data of header; let idx = index">
   <input type="text" class="keyvalueeditor-key" placeholder="Key" [(ngModel)]="data.key" (keydown)="onKeyDown($event, idx)">
   <input type="text" class="keyvalueeditor-value keyvalueeditor-value-text " placeholder="Value " [(ngModel)]="data.value"
     (keydown)="onKeyDown($event, idx)">
   <input type="text" class="keyvalueeditor-value keyvalueeditor-value-text " placeholder="Description" [(ngModel)]="data.description"
     (keydown)="onKeyDown($event, idx)">
-  <button type="button" class="btn btn-default btn-circle" (click)="onDeleteClick(idx)" *ngIf="urlencoded.length-1 != idx"><i class="glyphicon glyphicon-remove"></i></button>
+  <button type="button" class="btn btn-default btn-circle" (click)="onDeleteClick(idx)" *ngIf="header.length-1 != idx"><i class="glyphicon glyphicon-remove"></i></button>
 </div>

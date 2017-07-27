@@ -17,7 +17,10 @@ export class CollectionService {
     this.http = http;
     this.headers = new Headers();
     this.headers.append('Content-Type', 'multipart/form-data');
-    this.headers.append('Access-Control-Allow-Origin', '*');
+    this.headers.append('Access-Control-Allow-Origin', 'naver.com');
+    this.headers.append('Accept-Language', 'ko_KR');
+    this.headers.append('Referer', 'http://naver.com');
+    this.headers.append('User-Agent', 'test User-Agent');
 
     this.app = firebase.initializeApp({
       apiKey: "AIzaSyBM_wKB_LYG2bdF-iFYaIaFHNcgetNCFPI",
@@ -31,11 +34,23 @@ export class CollectionService {
 
 
 
+  test(): Observable<Object> {
+
+    
+    this.http.get('http://api.m.afreecatv.com/broad/a/list', { headers: this.headers })
+      .map(e => e.json())
+      .subscribe(data => {
+        console.log(data);
+      });
+    return null;
+  }
+
+
+
   getItemListening(): Observable<Object> {
     const collectionSubject: Subject<Object> = new Subject<Object>();
     var itemRef = firebase.database().ref('/api');
     itemRef.on('value', (snapshot) => {
-      console.log(snapshot.val())
       collectionSubject.next(snapshot.val());
     });
     return collectionSubject.asObservable();

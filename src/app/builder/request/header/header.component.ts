@@ -1,17 +1,16 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'request-urlencoded',
-  templateUrl: './urlencoded.component.html',
-  styleUrls: ['./urlencoded.component.css']
+  selector: 'request-header',
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.css']
 })
-export class UrlencodedComponent implements OnInit {
+export class HeaderComponent implements OnInit {
 
 
-  @Input() urlencoded: any;
+   @Input() header: any;
 
-  constructor() {
-  }
+  constructor() { }
 
   ngOnInit() {
   }
@@ -20,10 +19,11 @@ export class UrlencodedComponent implements OnInit {
    * Row 추가
    */
   addRow() {
-    this.urlencoded.push({
+    this.header.push({
       key: '',
       value: '',
-      description: ''
+      description: '',
+      type: 'text'
     })
   }
 
@@ -34,13 +34,12 @@ export class UrlencodedComponent implements OnInit {
    * @param index 
    */
   onKeyDown($event, index) {
-    if (index + 1 == this.urlencoded.length) {
+    if (index + 1 == this.header.length) {
       this.addRow();
     }
   }
 
   onDeleteClick(index) {
-    this.urlencoded.splice(index, 1);
+    this.header.splice(index, 1);
   }
-
 }

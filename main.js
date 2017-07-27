@@ -1,5 +1,5 @@
 // ./main.js
-const { app, BrowserWindow, net, protocol } = require('electron');
+const {app, BrowserWindow, net} = require('electron');
 const path = require('path');
 const url = require('url');
 const remoteRequest = require('./remote.request');
@@ -10,19 +10,15 @@ require('dotenv').config();
 
 let win = null;
 app.on('ready', function () {
-  protocol.registerStandardSchemes(['atom'])
-  app.on('ready', () => {
-    protocol.registerHttpProtocol('atom', '...')
-  })
   remoteRequest();
 
   // Initialize the window to our specified dimensions
   //webPreferences > webSecurity:false  CORS 무시
-  win = new BrowserWindow({ width: 1000, height: 600, webPreferences: { webSecurity: false } });
+  win = new BrowserWindow({width: 1000, height: 600, webPreferences: {  webSecurity:false}});
 
-  console.log(__dirname);
+    console.log(__dirname);
   // Specify entry point
-  if (process.env.PACKAGE === 'true') {
+  if (process.env.PACKAGE === 'true'){
     win.loadURL(url.format({
       pathname: path.join(__dirname, 'dist/index.html'),
       protocol: 'file:',
