@@ -1,12 +1,16 @@
 import { Injectable, EventEmitter } from '@angular/core';
 import { RequestOptionsArgs } from "@angular/http";
 import { ElectronService } from 'ngx-electron';
+import { IRequest, IResponse, IKeyvalue } from "app/builder/request/interface/item";
 
 @Injectable()
 export class NativeRequestService {
 
 
   _ipcRenderer: Electron.IpcRenderer;
+  status: number;
+  statusText: string;
+  headers: Array<IKeyvalue>;
 
   constructor(private _electronService: ElectronService) {
     this._ipcRenderer = _electronService.ipcRenderer;
@@ -17,34 +21,28 @@ export class NativeRequestService {
    * @param url 
    * @param options 
    */
-  request(url: string | Request, options?: RequestOptionsArgs): Promise<Response> {
+  request(request: IRequest): Promise<IResponse> {
 
     let responseInit: ResponseInit = null;
-    let request: Request;
     let body = '';
-    if (typeof url == 'string') {
-      request = new Request(url);
-    }
-    else {
-      request = url;
-    }
 
     return new Promise((resolve, reject) => {
 
       this._ipcRenderer.on('remote.response-start', (event, statusCode, statusMessage, headers) => {
-        responseInit = {
-          status: statusCode,
-          statusText: statusMessage,
-          headers: headers
-        }
+        this.headers = headers;
+        this.status = statusCode;
+        this.statusText = statusMessage;
       });
       this._ipcRenderer.on('remote.response-body', (event, chunk) => {
-        console.log('remote.response-body---------- ',chunk.toString())
         body += chunk.toString();
       })
       this._ipcRenderer.on('remote.response-complete', (event) => {
-        let response = new Response(body, responseInit);
-        resolve(response);
+        resolve(<IResponse>{
+          status: this.status,
+          statusText: this.statusText,
+          headers: this.headers,
+          body: body
+        });
       })
       this._ipcRenderer.on('remote.request-finish', (event) => {
         //console.log(arg) // prints "pong" 
@@ -57,15 +55,7 @@ export class NativeRequestService {
         reject(error);
       })
 
-      this._ipcRenderer.sendSync('native.request', {
-        url: request.url,
-        method: request.method,
-        headers: request.headers,
-        body: '',
-        mode: request.mode,
-        credentials: request.credentials,
-        cache: request.cache
-      }, options);
+      this._ipcRenderer.sendSync('native.request', request);
     })
   }
 }

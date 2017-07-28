@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { NativeRequestService } from "app/services/native-request.service";
 import { NgbTabsetConfig } from "@ng-bootstrap/ng-bootstrap";
+import { IRequest, IResponse } from "app/builder/request/interface/item";
 
 @Component({
   selector: 'app-request',
@@ -8,9 +9,9 @@ import { NgbTabsetConfig } from "@ng-bootstrap/ng-bootstrap";
   styleUrls: ['./request.component.css']
 })
 export class RequestComponent implements OnInit {
-  @Input() request: any;
+  @Input() request: IRequest;
 
-  @Output() responseChange = new EventEmitter<Response>();
+  @Output() responseChange = new EventEmitter<IResponse>();
   @Output() saveEvent = new EventEmitter<String>();
 
 
@@ -31,6 +32,7 @@ export class RequestComponent implements OnInit {
 
   ngOnInit() {
   }
+  
   get method() {
     return this.request.method ? this.request.method : 'GET';
   }
@@ -51,20 +53,11 @@ export class RequestComponent implements OnInit {
   }
 
   onSend() {
-    console.log(this.request);
-    let req = new Request(this.request.url, {
-      method: this.request.method,
-      headers: this.request.headers,
-      body: {},
-      mode: 'no-cors',  // "same-origin" | "no-cors" | "cors"
-      credentials: 'same-origin',   //"omit" | "same-origin" | "include"
-      cache: 'default'     //"default" | "no-store" | "reload" | "no-cache" | "force-cache" | "only-if-cached"
-    });
-
-    this.nativeRequestService.request(req).then(response => {
+    this.nativeRequestService.request(this.request).then(response => {
       //header
       //response.headers.forEach(function (val, key) { console.log(key + ' -------> ' + val); });
       //response.text().then(data => console.log('----------->',data)); 
+      console.log('nativeRequestService ---',response)
       this.responseChange.emit(response);
     }, error => {
       console.log(error)

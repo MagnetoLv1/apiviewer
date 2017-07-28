@@ -154,3 +154,9 @@ pre { padding: 5px; margin: 5px; }
 .button-bar__button:focus {
   outline: 0;
 }
+webview > object{
+  background-color: red;
+} 
+object{
+  background-color: blue;
+}

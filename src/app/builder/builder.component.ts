@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Broadcaster } from "ng2-broadcast";
 import { CollectionService } from "app/services/collection.service";
-import { Item, Keyvalue } from "./request/interface/item";
+import { IItem, IKeyvalue, IResponse } from "./request/interface/item";
 
 
 @Component({
@@ -12,11 +12,11 @@ import { Item, Keyvalue } from "./request/interface/item";
 export class BuilderComponent implements OnInit {
 
   item: any;
-  copyItem: Item = <Item> {
+  copyItem: IItem = <IItem>{
     path: '',
     request: {
       url: '',
-      mothod: 'GET',
+      method: 'GET',
       body: {
         formdata: [],
         urlencoded: [],
@@ -24,10 +24,20 @@ export class BuilderComponent implements OnInit {
       header: []
     },
     response: {
-
+      status: 0,
+      statusText: '',
+      headers: [],
+      body: ''
     }
   };
+  response: IResponse = <IResponse>{
+    status: 0,
+    statusText: '',
+    headers: [],
+    body: ''
+  };
   constructor(private broadcaster: Broadcaster, private collectionService: CollectionService) {
+
     /**
     * 아이템을 선택했을 경우
     */
@@ -35,39 +45,20 @@ export class BuilderComponent implements OnInit {
       .subscribe((item: any) => {
         // this.item = item;
         this.copyItem = JSON.parse(JSON.stringify(item));
-        if (!this.copyItem.request.header) {
-          this.copyItem.request.header = new Array<Keyvalue>();
-        }
-        this.copyItem.request.header.push({
-          key: '',
-          value: '',
-          description: ''
-        });
-        if (!this.copyItem.request.body.formdata) {
-          this.copyItem.request.body.formdata = new Array<Keyvalue>();
-        }
-        this.copyItem.request.body.formdata.push({
-          key: '',
-          value: '',
-          description: '',
-          type: 'text'
-        });
-        if (!this.copyItem.request.body.urlencoded) {
-          this.copyItem.request.body.urlencoded = new Array<Keyvalue>();
-        }
-        this.copyItem.request.body.urlencoded.push({
-          key: '',
-          value: '',
-          description: ''
-        });
+
+        //추가 입력폼을 위한
+        this.addBlankInput(this.copyItem.request.header);
+        this.addBlankInput(this.copyItem.request.body.formdata);
+        this.addBlankInput(this.copyItem.request.body.urlencoded);
       });
   }
 
   ngOnInit() {
   }
 
-  onResponseChange(response: Response) {
-    this.item.response = response;
+
+  onResponseChange(response: IResponse) {
+    this.response = response;
   }
 
   onSaveEvent() {
@@ -76,25 +67,43 @@ export class BuilderComponent implements OnInit {
     this.collectionService.update(item.path, item)
   }
 
+  /**
+   * 추가입력폼을 위한 빈값 추가
+   * @param values 
+   * 
+   */
+  addBlankInput(values: Array<IKeyvalue>) {
+    if (!values) {
+      values = new Array<IKeyvalue>();
+    }
+    values.push(<IKeyvalue>{
+      key: '',
+      value: '',
+      description: ''
+    });
+  }
 
-  cleanData(data: Item) {
+
+  /**
+   * 비어있는 값 제거
+   * @param data 
+   */
+  cleanData(data: IItem) {
     this.emptyDataRemove(data.request.body.urlencoded);
     this.emptyDataRemove(data.request.body.formdata);
     this.emptyDataRemove(data.request.header);
   }
 
-  emptyDataRemove(data: any) {
-    console.log(data);
-    let cnt = data.length;
+  emptyDataRemove(values: Array<IKeyvalue>) {
+    let cnt = values.length;
     for (let i = cnt - 1; i >= 0; i--) {
-      if (this.isEmptyData(data[i])) {
-        data.splice(i, 1);
+      if (this.isEmptyData(values[i])) {
+        values.splice(i, 1);
       }
     }
   }
 
-
-  isEmptyData(data: any) {
+  isEmptyData(data: IKeyvalue) {
     if (!data.key && !data.value) {
       return true;
     }

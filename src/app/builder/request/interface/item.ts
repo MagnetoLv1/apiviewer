@@ -1,27 +1,31 @@
-export interface Item {
+export interface IItem {
         path: string;
         name: string;
-        request: Request;
-        response: Response;
+        request: IRequest;
+        response: IResponse;
 }
-export interface Request {
+export interface IRequest {
         url: string
-        mothod: string; 
-        body: Body;
-        header: Array<Keyvalue>;
+        method: string;
+        body: IBody;
+        header: Array<IKeyvalue>;
 }
-export interface Body {
+export interface IBody {
         mode: string;
-        formdata: Array<Keyvalue>;
-        urlencoded: Array<Keyvalue>;
+        formdata: Array<IKeyvalue>;
+        urlencoded: Array<IKeyvalue>;
+        raw: string;
 }
-export interface Keyvalue {
+export interface IKeyvalue {
         key: string
         value: string
         description?: string
         type?: string
 }
 
-export interface Response {
-        url: string
+export interface IResponse {
+        status: number;
+        statusText: string;
+        headers: Array<IKeyvalue>;
+        body: string;
 }
