@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Broadcaster } from "ng2-broadcast";
 import { CollectionService } from "app/services/collection.service";
-import { IItem, IKeyvalue, IResponse } from "./request/interface/item";
+import { IItem, IKeyvalue, IResponse, IBody } from "./request/interface/item";
 
 
 @Component({
@@ -44,12 +44,19 @@ export class BuilderComponent implements OnInit {
     this.broadcaster.on<string>('item')
       .subscribe((item: any) => {
         // this.item = item;
-        this.copyItem = JSON.parse(JSON.stringify(item));
+        let obj = JSON.parse(JSON.stringify(item));
 
+        console.log(this.copyItem);
+        this.copyItem = this.MergeRecursive(this.copyItem, obj);
         //추가 입력폼을 위한
-        this.addBlankInput(this.copyItem.request.header);
-        this.addBlankInput(this.copyItem.request.body.formdata);
-        this.addBlankInput(this.copyItem.request.body.urlencoded);
+        console.log(this.copyItem)
+        if (!this.copyItem.request.body) {
+          //this.copyItem.request['body']= <IBody>{}
+        }
+        this.addBlankInput(this.copyItem.request, 'header');
+        this.addBlankInput(this.copyItem.request.body, 'formdata');
+        this.addBlankInput(this.copyItem.request.body, 'urlencoded');
+        console.log(this.copyItem.request.body);
       });
   }
 
@@ -72,10 +79,11 @@ export class BuilderComponent implements OnInit {
    * @param values 
    * 
    */
-  addBlankInput(values: Array<IKeyvalue>) {
-    if (!values) {
-      values = new Array<IKeyvalue>();
+  addBlankInput(parent: any, key: string) {
+    if (!parent[key]) {
+      parent[key] = new Array<IKeyvalue>();
     }
+    let values = parent[key];
     values.push(<IKeyvalue>{
       key: '',
       value: '',
@@ -89,13 +97,22 @@ export class BuilderComponent implements OnInit {
    * @param data 
    */
   cleanData(data: IItem) {
-    this.emptyDataRemove(data.request.body.urlencoded);
-    this.emptyDataRemove(data.request.body.formdata);
-    this.emptyDataRemove(data.request.header);
+    console.log(data.request.body)
+    this.emptyDataRemove(data.request.body,'urlencoded');
+    this.emptyDataRemove(data.request.body,'formdata');
+    this.emptyDataRemove(data.request,'header');
   }
 
-  emptyDataRemove(values: Array<IKeyvalue>) {
+  emptyDataRemove(parent: any , key:string) {
+    if (!parent[key]) {
+      return;
+    }
+    let values:Array<IKeyvalue> = parent[key];
     let cnt = values.length;
+    if(cnt ==0){
+      delete parent[key];
+      return;
+    }
     for (let i = cnt - 1; i >= 0; i--) {
       if (this.isEmptyData(values[i])) {
         values.splice(i, 1);
@@ -108,5 +125,28 @@ export class BuilderComponent implements OnInit {
       return true;
     }
     return false;
+  }
+
+  MergeRecursive(obj1, obj2) {
+
+    for (var p in obj2) {
+      try {
+        // Property in destination object set; update its value.
+        if (obj2[p].constructor == Object) {
+          obj1[p] = this.MergeRecursive(obj1[p], obj2[p]);
+
+        } else {
+          obj1[p] = obj2[p];
+
+        }
+
+      } catch (e) {
+        // Property in destination object not set; create it and set its value.
+        obj1[p] = obj2[p];
+
+      }
+    }
+
+    return obj1;
   }
 }

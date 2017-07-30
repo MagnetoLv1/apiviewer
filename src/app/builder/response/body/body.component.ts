@@ -64,7 +64,7 @@ export class BodyComponent implements OnInit {
     this._previewBody == this.body;
     this.filesystemService.writeFile('./preview.html', this.body, () => {
       console.log('writed');
-      let path = this.filesystemService.realpathSync('./preview.html');
+      let path = 'file://' + this.filesystemService.realpathSync('./preview.html');
       const webview:any= document.getElementById('webview');
       webview.loadURL(path);
     })
