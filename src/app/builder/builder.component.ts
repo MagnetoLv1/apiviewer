@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Broadcaster } from "ng2-broadcast";
 import { CollectionService } from "app/services/collection.service";
-import { IItem, IKeyvalue, IResponse, IBody } from "./request/interface/item";
+import { IItem, IKeyvalue, IResponse, IBody, IRequest } from "./request/interface/item";
 
 
 @Component({
@@ -11,24 +11,28 @@ import { IItem, IKeyvalue, IResponse, IBody } from "./request/interface/item";
 })
 export class BuilderComponent implements OnInit {
 
-  item: any;
-  copyItem: IItem = <IItem>{
-    path: '',
-    request: {
-      url: '',
-      method: 'GET',
-      body: {
-        formdata: [],
-        urlencoded: [],
-      },
-      header: []
+  item: IItem;
+  request: IRequest = <IRequest>{
+    url: '',
+    method: 'GET',
+    body: {
+      mode:'formdata',
+      formdata: [{
+      key: '',
+      value: '',
+      description: ''
+    }],
+      urlencoded: [{
+      key: '',
+      value: '',
+      description: ''
+    }],
     },
-    response: {
-      status: 0,
-      statusText: '',
-      headers: [],
-      body: ''
-    }
+    header: [{
+      key: '',
+      value: '',
+      description: ''
+    }]
   };
   response: IResponse = <IResponse>{
     status: 0,
@@ -43,20 +47,19 @@ export class BuilderComponent implements OnInit {
     */
     this.broadcaster.on<string>('item')
       .subscribe((item: any) => {
-        // this.item = item;
-        let obj = JSON.parse(JSON.stringify(item));
-
-        console.log(this.copyItem);
-        this.copyItem = this.MergeRecursive(this.copyItem, obj);
-        //추가 입력폼을 위한
-        console.log(this.copyItem)
-        if (!this.copyItem.request.body) {
-          //this.copyItem.request['body']= <IBody>{}
-        }
-        this.addBlankInput(this.copyItem.request, 'header');
-        this.addBlankInput(this.copyItem.request.body, 'formdata');
-        this.addBlankInput(this.copyItem.request.body, 'urlencoded');
-        console.log(this.copyItem.request.body);
+        this.item = item;
+        this.request = this.MergeRecursive(<IRequest>{
+          url: '',
+          method: 'GET',
+          body: {
+            formdata: [],
+            urlencoded: [],
+          },
+          header: []
+        }, JSON.parse(JSON.stringify(item.request)));
+        this.addBlankInput(this.request, 'header');
+        this.addBlankInput(this.request.body, 'formdata');
+        this.addBlankInput(this.request.body, 'urlencoded');
       });
   }
 
@@ -69,9 +72,11 @@ export class BuilderComponent implements OnInit {
   }
 
   onSaveEvent() {
-    let item = JSON.parse(JSON.stringify(this.copyItem));
-    this.cleanData(item);
-    this.collectionService.update(item.path, item)
+    let request = JSON.parse(JSON.stringify(this.request));
+    this.emptyDataRemove(request.body, 'urlencoded');
+    this.emptyDataRemove(request.body, 'formdata');
+    this.emptyDataRemove(request, 'header');
+    this.collectionService.update(this.item.path + '/request', request)
   }
 
   /**
@@ -92,24 +97,13 @@ export class BuilderComponent implements OnInit {
   }
 
 
-  /**
-   * 비어있는 값 제거
-   * @param data 
-   */
-  cleanData(data: IItem) {
-    console.log(data.request.body)
-    this.emptyDataRemove(data.request.body,'urlencoded');
-    this.emptyDataRemove(data.request.body,'formdata');
-    this.emptyDataRemove(data.request,'header');
-  }
-
-  emptyDataRemove(parent: any , key:string) {
+  emptyDataRemove(parent: any, key: string) {
     if (!parent[key]) {
       return;
     }
-    let values:Array<IKeyvalue> = parent[key];
+    let values: Array<IKeyvalue> = parent[key];
     let cnt = values.length;
-    if(cnt ==0){
+    if (cnt == 0) {
       delete parent[key];
       return;
     }
@@ -127,6 +121,12 @@ export class BuilderComponent implements OnInit {
     return false;
   }
 
+
+  /**
+   * Object 복사
+   * @param obj1 
+   * @param obj2 
+   */
   MergeRecursive(obj1, obj2) {
 
     for (var p in obj2) {

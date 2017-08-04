@@ -32,7 +32,7 @@ export class RequestComponent implements OnInit {
 
   ngOnInit() {
   }
-  
+
   get method() {
     return this.request.method ? this.request.method : 'GET';
   }
@@ -41,15 +41,15 @@ export class RequestComponent implements OnInit {
   }
 
   get mode() {
-    return this.request.body ? this.request.body.mode : 'form-data';
+    return this.request.body.mode;
   }
 
-  set mode(value:string) {
-     this.request.body.mode = value;
+  set mode(value: string) {
+    this.request.body.mode = value;
   }
 
   get header() {
-    return this.request.header; 
+    return this.request.header;
   }
 
   onSend() {
@@ -57,7 +57,7 @@ export class RequestComponent implements OnInit {
       //header
       //response.headers.forEach(function (val, key) { console.log(key + ' -------> ' + val); });
       //response.text().then(data => console.log('----------->',data)); 
-      console.log('nativeRequestService ---',response)
+      console.log('nativeRequestService ---', response)
       this.responseChange.emit(response);
     }, error => {
       console.log(error)

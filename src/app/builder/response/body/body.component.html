@@ -1,7 +1,7 @@
 <div class="button-bar" style="width:280px;margin:0 auto;">
   <div class="button-bar__item">
-    <input type="radio" name="format" value="putty" [(ngModel)]="format">
-    <button class="button-bar__button">Putty</button>
+    <input type="radio" name="format" value="pretty" [(ngModel)]="format">
+    <button class="button-bar__button">Pretty</button>
   </div>
   <div class="button-bar__item">
     <input type="radio" name="format" value="raw" [(ngModel)]="format">
@@ -13,12 +13,13 @@
   </div>
 </div>
 
-<pre [innerHtml]="bodyJson | prettyjson:3" [hidden]="format!='putty'">
+<pre [innerHtml]="bodyJson | prettyjson:3" [hidden]="format!='pretty'">
 </pre>
 
 <pre [innerText]="body" [hidden]="format!='raw'">
 </pre>
 
-<webview id="webview" src="about:blank"  autosize="on" [ngStyle]="{'display': (format=='privew')?'block':'none'}">
+<webview id="webview" src="about:blank"  autosize="on" [ngClass]="{'hide': (format!='privew')}" 
+ [style.height.px]="height">
 
 </webview>

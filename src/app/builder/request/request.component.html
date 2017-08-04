@@ -1,81 +1,5 @@
 <section id="request">
   <div id="request-builder">
-    <div id="request-types" class="clearfix">
-      <ul class="request-helper-tabs">
-        <li class="active" data-id="normal">Normal {{req}}</li>
-      </ul>
-      <div id="environment-selector-wrapper" *ngIf="0">
-        <div id="environment-quicklook-wrapper">
-          <a id="environment-quicklook">
-                        <img src="assets/img/eye.png"/>
-                    </a>
-        </div>
-        <div id="environment-quicklook-content" class="clearfix">
-          <div id="environment-quicklook-environments">
-            <h6>No environment</h6>
-            <ul></ul>
-          </div>
-          <div id="environment-quicklook-globals">
-            <h6>Globals</h6>
-            <ul></ul>
-          </div>
-        </div>
-        <div id="environment-selector">
-          <div class="btn-group">
-            <a data-toggle="dropdown">
-                            <span class="environment-list-item-selected">No environment</span>
-                            <span class="caret" style="margin-top: 8px;"></span></a>
-            <ul class="dropdown-menu">
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div id="broadcasts" class="btn-group">
-        <a data-toggle="dropdown" rel="tooltip" id="broadcasts-count">0</a>
-        <ul class="dropdown-menu">
-        </ul>
-      </div>
-      <!--
-      <div class="preferences">
-        <a data-toggle="modal" href="#modal-shortcuts" rel="tooltip" data-placement="bottom" data-original-title="Shortcuts">
-                    <img src="assets/img/keyboard_wireless.png" style="vertical-align: middle;"/></a>
-        <a href="#modal-settings" data-toggle="modal" rel="tooltip" data-placement="bottom" data-original-title="Settings">
-                    <img src="assets/img/settings.png" style="vertical-align: middle;"/></a>
-      </div>
-      -->
-    </div>
-    <div id="request-helpers" class="clearfix" *ngIf="0">
-      <div id="request-helper-normal" class="request-helpers"></div>
-      <div id="request-helper-basicAuth" class="request-helpers">
-        <div class="request-helper-form-container">
-          <form class="form form-horizontal">
-            <div class="control-group">
-              <label class="control-label">Username</label>
-
-              <div class="controls">
-                <input type="text" id="request-helper-basicAuth-username" class="clean-input" />
-              </div>
-            </div>
-            <div class="control-group">
-              <label class="control-label">Password</label>
-
-              <div class="controls">
-                <input type="password" id="request-helper-basicAuth-password" class="clean-input" />
-              </div>
-            </div>
-            <div class="control-group">
-              <div class="controls">
-                <a class="btn btn-secondary request-helper-submit" data-type="basic">Refresh headers</a>
-              </div>
-            </div>
-          </form>
-        </div>
-        <div class="request-helper-form-description">
-          <h4>Note</h4>
-          The authorization header will be generated and added as a custom header.
-        </div>
-      </div>
-    </div>
 
     <div id="request-url" class="clearfix">
       <div class="row">
@@ -123,7 +47,6 @@
         </ngb-tab>
         <ngb-tab title="Body">
           <ng-template ngbTabContent>
-
             <div class="button-bar" style="margin:0 auto;">
               <div class="button-bar__item">
                 <input type="radio" name="mode" value="formdata" [(ngModel)]="mode">
@@ -143,10 +66,6 @@
             <request-formdata [formdata]="formdata" *ngIf="mode=='formdata'"></request-formdata>
             <request-urlencoded [urlencoded]="urlencoded" *ngIf="mode=='urlencoded'"></request-urlencoded>
             <request-raw [raw]="raw" *ngIf="mode=='raw'"></request-raw>
-          </ng-template>
-        </ngb-tab>
-        <ngb-tab title="URL params">
-          <ng-template ngbTabContent>
           </ng-template>
         </ngb-tab>
       </ngb-tabset>

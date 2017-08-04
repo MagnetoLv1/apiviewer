@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, ElementRef, NgZone } from '@angular/core';
 import { FilesystemService } from '../../../services/filesystem.service';
 import * as Electron from 'electron';
 import * as fs from 'fs';
@@ -9,12 +9,13 @@ import * as fs from 'fs';
 })
 export class BodyComponent implements OnInit {
 
-  @Input() body: string ='';
+  @Input() body: string = '';
   reader: FileReader;
   _format: string;
 
   bodyJson: string;
-  constructor(private filesystemService: FilesystemService) {
+  height: number;
+  constructor(private zone: NgZone, private filesystemService: FilesystemService) {
   }
 
   ngOnInit() {
@@ -24,10 +25,12 @@ export class BodyComponent implements OnInit {
     this._format = val;
 
     switch (this._format) {
-      case 'putty':
+      case 'pretty':
         this.bodyToJson();
+        this.height=0;
         break;
       case 'raw':
+        this.height=0;
         break;
       case 'privew':
         this.bodyToWebview();
@@ -47,7 +50,7 @@ export class BodyComponent implements OnInit {
     if (this._jsonBody == this.body) {
       return;
     }
-    this._jsonBody == this.body;
+    this._jsonBody = this.body;
 
     try {
       this.bodyJson = JSON.parse(this.body);
@@ -61,11 +64,21 @@ export class BodyComponent implements OnInit {
     if (this._previewBody == this.body) {
       return;
     }
-    this._previewBody == this.body;
+    this._previewBody = this.body;
+
+    let that = this;
     this.filesystemService.writeFile('./preview.html', this.body, () => {
-      console.log('writed');
-      let path = 'file://' + this.filesystemService.realpathSync('./preview.html');
-      const webview:any= document.getElementById('webview');
+      let path = 'file://' + that.filesystemService.realpathSync('./preview.html');
+      const webview: any = document.getElementById('webview');
+      webview.addEventListener('dom-ready', (e) => {
+
+        webview.executeJavaScript("document.body.scrollHeight", (scrollHeight) => {
+          this.zone.run(() => {
+            this.height = scrollHeight + 100;
+            console.log(this.height);
+          });
+        });
+      })
       webview.loadURL(path);
     })
   }
