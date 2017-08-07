@@ -36,7 +36,7 @@ function createWindow(){
   //webPreferences > webSecurity:false  CORS 무시
   win = new BrowserWindow({ width: 1000, height: 600, webPreferences: { webSecurity: false } });
 
-  console.log(__dirname);
+  console.log(__dirname, process.env.PACKAGE);
   // Specify entry point
   if (process.env.PACKAGE === 'true') {
     win.loadURL(url.format({
@@ -50,7 +50,6 @@ function createWindow(){
   }
   // Show dev tools
   // Remove this line before distributing
-  win.webContents.openDevTools()
 
   // Remove window once app is closed
   win.on('closed', function () {

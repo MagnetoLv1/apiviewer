@@ -8,6 +8,8 @@
     "start": "ng serve",
     "build": "ng build",
     "electron": "electron .",
+    "package": "electron-packager . --overwrite ApiViewer --out=release",
+    "package:script": "node scripts/package-win.js",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
